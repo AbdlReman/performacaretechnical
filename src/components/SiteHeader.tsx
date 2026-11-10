@@ -5,6 +5,7 @@ const links = [
   { href: "/about-us", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/staff-supply", label: "Staff Supply" },
+  { href: "/hospitality", label: "Hospitality" },
   { href: "/why-us", label: "Why Us" },
   { href: "/process", label: "Process" },
   { href: "/faq", label: "FAQ" },

@@ -28,6 +28,9 @@ export default function SiteFooter() {
           <Link href="/staff-supply" className="hover:text-white transition">
             Staff Supply
           </Link>
+          <Link href="/hospitality" className="hover:text-white transition">
+            Hospitality
+          </Link>
           <Link href="/why-us" className="hover:text-white transition">
             Why Us
           </Link>

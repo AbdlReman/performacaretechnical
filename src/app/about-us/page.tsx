@@ -9,28 +9,72 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "About Us | Performa Care Technical & Hospitality Services Dubai",
+  title: "About Performa Care | Technical, Cleaning & Hospitality Services in Dubai",
   description:
-    "Learn about Performa Care Technical Services & Performa Care Hospitality Services — our mission, vision, and commitment to clean, healthy, well-maintained spaces across Dubai.",
+    "Performa Care Technical Services and Performa Care Hospitality Services provide cleaning, trained staff supply, hospitality staffing and MEP maintenance across Dubai. 2-hour response. Call +971 50 224 7589.",
 };
 
 const reasons = [
   {
-    title: "Reliable Execution",
-    desc: "Dedicated professionals focused on consistency, efficiency and customer satisfaction.",
+    title: "2-Hour Response",
+    desc: "We respond to any issue on your site within 2 hours.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </svg>
+    ),
   },
   {
-    title: "Modern Equipment",
-    desc: "State-of-the-art tools that deliver thorough, hygienic results across every site.",
+    title: "Trained Professionals",
+    desc: "Skilled teams that use modern equipment and follow clear standards.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+        <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
   },
   {
     title: "Eco-Friendly Products",
-    desc: "Non-toxic, biodegradable cleaning products that protect people and the environment.",
+    desc: "Non-toxic, biodegradable cleaning products as part of our sustainability program.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+        <path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z" />
+        <path d="M5 21l7-7" />
+      </svg>
+    ),
   },
   {
-    title: "Tailored Solutions",
-    desc: "Routine maintenance, deep cleaning, staffing and specialised services built around your needs.",
+    title: "Agreed Schedules",
+    desc: "Visit dates are agreed for each site so management stays consistent.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+        <path d="M8 7V3m8 4V3M4 11h16M5 5h14v16H5z" />
+      </svg>
+    ),
   },
+  {
+    title: "One Partner",
+    desc: "Cleaning, staffing, and technical maintenance under one roof.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+        <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
+      </svg>
+    ),
+  },
+];
+
+const spaces = [
+  "Offices",
+  "Villas",
+  "Hotels",
+  "Restaurants",
+  "Cafés",
+  "Retail",
+  "Warehouses",
+  "Staff accommodation",
+  "Event venues",
 ];
 
 export default function AboutUsPage() {
@@ -40,47 +84,52 @@ export default function AboutUsPage() {
       <SiteHeader />
       <main>
         <PageHero
-          eyebrow="About Us"
+          eyebrow="About Performa Care"
           title={
             <>
-              Fresh, Meticulous Care for Homes &amp;{" "}
-              <em className="not-italic text-sky">Business Environments</em>
+              Professional Technical, Cleaning &amp;{" "}
+              <em className="not-italic text-sky">Hospitality Services</em> in Dubai
             </>
           }
           image="/images/h8-banner1.jpg"
         >
           <p className="text-lg max-w-[760px] text-[#d8e4ee] mb-8">
-            Performa Care Technical Services &amp; Performa Care Hospitality Services bring a fresh,
-            meticulous touch to your home and business environments across Dubai.
+            Performa Care Technical Services and Performa Care Hospitality Services are based in
+            Dubai. We provide professional technical, maintenance, cleaning, and staffing solutions
+            for residential, commercial, and business properties across Dubai.
           </p>
-          <CtaButtons primaryLabel="Get a Quote" secondaryHref="/services" secondaryLabel="Our Services" />
+          <CtaButtons
+            primaryHref="/#quote"
+            primaryLabel="Get a Cleaning Quote"
+            secondaryHref="/staff-supply"
+            secondaryLabel="Hire Staff"
+          />
         </PageHero>
 
-        {/* Why choose us */}
         <section className="py-16 sm:py-[90px]">
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Why Choose Us
+                Who We Are
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                A clean space is essential for well-being and productivity
+                Comfort, productivity, and peace of mind
               </h2>
               <p className="text-muted text-[17px] mb-5">
-                At Performa Care Technical Services, we understand that a clean space is essential for
-                your well-being and productivity. Our dedicated team of professionals uses
-                state-of-the-art equipment and eco-friendly products to ensure every corner of your
-                space is spotless and hygienic.
+                A well-maintained property is essential for comfort, productivity, and peace of mind.
+                That is why we focus on reliable execution, attention to detail, and customer
+                satisfaction on every site.
               </p>
               <p className="text-muted text-[17px]">
-                Whether you need routine maintenance, deep cleaning, or specialised services, we are
-                committed to delivering exceptional results tailored to your specific needs — with a
-                focus on reliability, efficiency, and customer satisfaction.
+                Our team delivers commercial cleaning, residential cleaning, trained staff supply,
+                hospitality staffing, and MEP maintenance. From regular office cleaning and villa deep
+                cleans to marble polishing, carpet shampooing, and event waiters, we act as a single
+                trusted partner.
               </p>
             </div>
             <Image
               src="/images/shopping-mall-cleaning-660x410.jpg"
-              alt="Performa Care professional cleaning team at work"
+              alt="Performa Care commercial cleaning services in Dubai"
               width={900}
               height={600}
               className="reveal w-full h-[300px] sm:h-[420px] object-cover rounded-[18px]"
@@ -88,40 +137,24 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Best service */}
         <section className="py-16 sm:py-[90px] bg-surface">
           <div className="w-[min(1180px,92%)] mx-auto">
-            <div className="reveal text-center max-w-[720px] mx-auto mb-12">
+            <div className="reveal max-w-[720px] mb-10">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                The Best Service We Provide
+                Why Choose Us
               </span>
-              <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                Reliable, efficient and tailored solutions
+              <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15]">
+                Why businesses and property managers choose us
               </h2>
-              <p className="text-muted text-[17px]">
-                We are dedicated to providing reliable, efficient, and tailored solutions for a clean
-                and healthy environment — ensuring customer satisfaction on every visit.
-              </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
               {reasons.map((item) => (
                 <article
                   key={item.title}
                   className="reveal bg-white border border-line rounded-[18px] p-6"
                 >
-                  <IconBox className="mb-4">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="w-6 h-6"
-                    >
-                      <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
-                      <path d="M9 12l2 2 4-4" />
-                    </svg>
-                  </IconBox>
-                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                  <IconBox className="mb-4">{item.icon}</IconBox>
+                  <h3 className="text-lg font-bold mb-2 tracking-[-0.02em]">{item.title}</h3>
                   <p className="text-muted text-[15px]">{item.desc}</p>
                 </article>
               ))}
@@ -129,77 +162,48 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Mission & Vision */}
         <section className="py-16 sm:py-[90px]">
-          <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <article
-              className="reveal rounded-[22px] p-8 sm:p-10 text-white"
-              style={{ background: "linear-gradient(135deg, var(--blue), #0f3f63)" }}
-            >
-              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-sky mb-3">
-                Our Mission
-              </span>
-              <h2 className="text-[28px] font-extrabold tracking-[-0.02em] mb-4 text-white">
-                Top-quality cleaning that exceeds expectations
-              </h2>
-              <p className="text-[#cfe2f2] text-[16px] leading-relaxed">
-                Our mission is to provide top-quality cleaning services that exceed our clients&apos;
-                expectations, using environmentally responsible products and practices. We are
-                dedicated to creating clean, safe, and healthy spaces for our clients while
-                contributing to a sustainable future.
-              </p>
-            </article>
-            <article className="reveal rounded-[22px] p-8 sm:p-10 border border-line bg-surface">
-              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Our Vision
-              </span>
-              <h2 className="text-[28px] font-extrabold tracking-[-0.02em] mb-4">
-                Leading eco-friendly cleaning solutions
-              </h2>
-              <p className="text-muted text-[16px] leading-relaxed">
-                To be the leading provider of eco-friendly cleaning solutions, delivering exceptional
-                service and enhancing the health and well-being of our communities through sustainable
-                practices and innovation.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        {/* Who we are + contact */}
-        <section className="py-16 sm:py-[90px] bg-surface">
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
             <div className="reveal">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Who We Are
+                Areas We Serve
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                One Dubai team for cleaning, staffing and technical care
+                Across Dubai
               </h2>
-              <p className="text-muted text-[17px] mb-5">
-                We bring a fresh, meticulous touch to your home and business environments. At Performa
-                Care Technical Services, we understand that a clean space is essential for your
-                well-being and productivity — and we aim to create a clean and healthy environment you
-                can be proud of.
+              <p className="text-muted text-[17px] mb-6">
+                We serve offices, villas, hotels, restaurants, cafés, retail, warehouses, staff
+                accommodation, and event venues across Dubai.
               </p>
+              <div className="flex flex-wrap gap-2.5 mb-8">
+                {spaces.map((space) => (
+                  <span
+                    key={space}
+                    className="text-sm font-semibold bg-surface border border-line px-3.5 py-2 rounded-full text-[#33495e]"
+                  >
+                    {space}
+                  </span>
+                ))}
+              </div>
               <div className="flex gap-3.5 flex-wrap">
                 <Link
-                  href="/why-us"
+                  href="/services"
                   className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] bg-blue text-white transition hover:bg-[#124c75] hover:-translate-y-0.5"
                 >
-                  Why Choose Us →
+                  View Services →
                 </Link>
                 <Link
-                  href="/services"
+                  href="/hospitality"
                   className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] border-2 border-blue text-blue transition hover:bg-blue hover:text-white"
                 >
-                  View Services
+                  Hospitality Services
                 </Link>
               </div>
             </div>
 
             <div className="reveal bg-white border border-line rounded-[22px] p-7 sm:p-9">
-              <h3 className="text-2xl font-extrabold tracking-[-0.02em] mb-5">Official Info</h3>
-              <div className="grid gap-4">
+              <h3 className="text-2xl font-extrabold tracking-[-0.02em] mb-5">Contact</h3>
+              <div className="grid gap-4 mb-7">
                 <div className="flex gap-3 items-start">
                   <IconBox>
                     <svg
@@ -214,10 +218,9 @@ export default function AboutUsPage() {
                     </svg>
                   </IconBox>
                   <div>
-                    <b className="block mb-1">Address</b>
+                    <b className="block mb-1">Office</b>
                     <span className="text-muted text-[15px]">
-                      Office 476, 4th Floor, Arjumand Building, 17th Street, Green Community Village,
-                      Dubai
+                      Office 476, 4th Floor, Arjumand Building, 17th St, Green Community Village, Dubai
                     </span>
                   </div>
                 </div>
@@ -260,6 +263,14 @@ export default function AboutUsPage() {
                   </div>
                 </a>
               </div>
+              <CtaButtons
+                primaryHref="/#quote"
+                primaryLabel="Get a Cleaning Quote"
+                secondaryHref="/staff-supply"
+                secondaryLabel="Hire Staff"
+                showCall={false}
+                light={false}
+              />
             </div>
           </div>
         </section>
