@@ -15,7 +15,7 @@ const steps = [
   {
     n: "01",
     title: "Tell Us Your Needs",
-    desc: "Call, email or send the quote form. Share the property type, service required or staff you need.",
+    desc: "Call, email, or send the quote form. Share the property type, service required, or staff you need.",
   },
   {
     n: "02",
@@ -25,7 +25,7 @@ const steps = [
   {
     n: "03",
     title: "Agree the Plan",
-    desc: "Scope, schedule and visit dates are agreed together. Clear expectations before work begins.",
+    desc: "Scope, schedule, and visit dates are agreed together. Clear expectations before work begins.",
   },
   {
     n: "04",
@@ -44,8 +44,7 @@ export default function ProcessPage() {
           eyebrow="How It Works"
           title={
             <>
-              From First Call to a{" "}
-              <em className="not-italic text-sky">Spotless Site</em>
+              From First Call to a <em className="not-italic text-sky">Spotless Site</em>
             </>
           }
         >
@@ -101,7 +100,7 @@ export default function ProcessPage() {
         >
           <div className="w-[min(1180px,92%)] mx-auto reveal text-center max-w-[760px]">
             <h2 className="text-[clamp(26px,4vw,40px)] font-extrabold tracking-[-0.02em] mb-4 text-white">
-              Whether you need regular cleaning, specialist services or trained staff, the process
+              Whether you need regular cleaning, specialist services, or trained staff, the process
               stays straightforward.
             </h2>
             <div className="flex justify-center mb-5">
@@ -111,6 +110,13 @@ export default function ProcessPage() {
               Call{" "}
               <a href="tel:+971502247589" className="font-bold text-white underline underline-offset-4">
                 +971 50 224 7589
+              </a>
+              {" | "}
+              <a
+                href="mailto:info@performacaretechnical.com"
+                className="font-bold text-white underline underline-offset-4"
+              >
+                info@performacaretechnical.com
               </a>
             </p>
           </div>

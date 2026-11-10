@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Do you supply staff as well as cleaning services?",
-    a: "Yes. Besides cleaning services, we supply trained staff: cleaners, housekeeping staff, office boys, and waiters and waitresses for events and hospitality businesses.",
+    a: "Yes. We supply trained cleaners, housekeeping staff, office boys, and waiters and waitresses for events and hospitality businesses.",
   },
   {
     q: "Which areas do you serve?",
-    a: "We serve residential, commercial and business properties across Dubai.",
+    a: "We serve residential, commercial, and business properties across Dubai.",
   },
   {
     q: "How quickly can you respond to an issue?",
@@ -27,31 +27,31 @@ const faqs = [
   },
   {
     q: "Do you offer regular or monthly cleaning contracts?",
-    a: "Yes. We provide regular and monthly cleaning contracts for commercial and residential properties, with agreed visit dates.",
+    a: "Yes. We provide regular and monthly cleaning contracts with agreed visit dates.",
   },
   {
     q: "Are your cleaning products safe?",
-    a: "Yes. We use eco-friendly, non-toxic and biodegradable products.",
+    a: "Yes. We use eco-friendly, non-toxic, and biodegradable products.",
   },
   {
     q: "Can you supply staff for events?",
-    a: "Yes. We supply experienced, courteous waiters and waitresses for weddings, corporate functions and private parties.",
+    a: "Yes. We supply experienced, courteous waiters and waitresses for weddings, corporate functions, and private parties.",
   },
   {
-    q: "Do you handle marble and granite polishing?",
-    a: "Yes. Marble polishing, granite polishing, carpet shampooing and pressure washing are available as specialist services.",
+    q: "Do you offer marble and granite polishing?",
+    a: "Yes. Marble polishing, granite polishing, carpet shampooing, and pressure washing are available as specialist services.",
   },
   {
     q: "Do you provide MEP / technical maintenance?",
-    a: "Yes. We provide technical and MEP maintenance covering mechanical, electrical and plumbing systems.",
+    a: "Yes. We provide technical and MEP maintenance covering mechanical, electrical, and plumbing systems.",
   },
   {
     q: "How do I get a quote?",
-    a: "Call +971 50 224 7589, email info@performacaretechnical.com, or use the quote form on the website. We will arrange a site assessment and provide a tailored plan.",
+    a: "Call +971 50 224 7589, email info@performacaretechnical.com, or use the quote form on the website.",
   },
   {
     q: "What makes Performa Care different?",
-    a: "One trusted partner for cleaning, trained staff supply and technical maintenance, with a 2-hour response, eco-friendly products and agreed schedules for every site.",
+    a: "One trusted partner for cleaning, trained staff supply, and technical maintenance, with a 2-hour response, eco-friendly products, and agreed schedules for every site.",
   },
 ];
 
@@ -82,11 +82,7 @@ export default function FaqPage() {
           <div className="w-[min(900px,92%)] mx-auto">
             <div className="reveal">
               {faqs.map((faq, index) => (
-                <details
-                  key={faq.q}
-                  open={index === 0}
-                  className="border-b border-line py-5"
-                >
+                <details key={faq.q} open={index === 0} className="border-b border-line py-5">
                   <summary className="cursor-pointer font-bold text-[17px] sm:text-[18px] list-none flex justify-between gap-5 items-start">
                     {faq.q}
                   </summary>
@@ -108,7 +104,7 @@ export default function FaqPage() {
                 <a href="mailto:info@performacaretechnical.com" className="text-blue font-bold">
                   info@performacaretechnical.com
                 </a>
-                , or send the quote form and we&apos;ll arrange a site assessment.
+                , or use the quote form on the website.
               </p>
               <div className="flex justify-center gap-3.5 flex-wrap">
                 <Link

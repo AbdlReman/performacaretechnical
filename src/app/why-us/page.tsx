@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const reasons = [
   {
     title: "2-Hour Response",
-    desc: "We respond to any issue within 2 hours. Fast support when you need it.",
+    desc: "We respond to any issue on your site within 2 hours.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <circle cx="12" cy="12" r="9" />
@@ -36,7 +36,7 @@ const reasons = [
   },
   {
     title: "Eco-Friendly Products",
-    desc: "Non-toxic, biodegradable cleaning products. We also run a sustainability programme focused on waste segregation and water & energy-saving methods.",
+    desc: "Non-toxic, biodegradable cleaning products. We also run a sustainability programme focused on waste segregation and responsible resource use.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z" />
@@ -55,7 +55,7 @@ const reasons = [
   },
   {
     title: "One Partner, Every Space",
-    desc: "Homes, offices, hotels, restaurants, cafés, retail, warehouses and staff accommodation. Cleaning, staffing and technical maintenance under one roof.",
+    desc: "Homes, offices, hotels, restaurants, cafés, retail, warehouses, and staff accommodation. Cleaning, staffing, and technical maintenance under one roof.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
@@ -64,7 +64,7 @@ const reasons = [
   },
   {
     title: "Sustainable by Design",
-    desc: "Eco-friendly products, responsible methods and a commitment to better practices for every property we serve.",
+    desc: "Eco-friendly products, waste segregation, and water & energy-saving methods aligned with Dubai’s sustainability goals.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z" />
@@ -89,16 +89,14 @@ export default function WhyUsPage() {
           }
           image="/images/update-banner1-1-480x400.jpg"
         >
-          <p className="text-lg max-w-[720px] text-[#d8e4ee] mb-8">
-            We focus on reliable execution, attention to detail and customer satisfaction — for every
-            site, every visit.
-          </p>
-          <CtaButtons
-            primaryHref="/#quote"
-            primaryLabel="Get a Quote"
-            secondaryLabel={null}
-            showCall
-          />
+          <div className="mt-2">
+            <CtaButtons
+              primaryHref="/#quote"
+              primaryLabel="Get a Quote"
+              secondaryLabel={null}
+              showCall
+            />
+          </div>
         </PageHero>
 
         <section className="py-16 sm:py-[90px]">
@@ -135,12 +133,9 @@ export default function WhyUsPage() {
             </div>
             <div className="reveal">
               <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                Choose a single trusted partner in Dubai
+                Choose a single trusted partner in Dubai for keeping your property clean, well
+                maintained, and properly staffed.
               </h2>
-              <p className="text-muted text-[17px] mb-7">
-                Keeping your property clean, well maintained and properly staffed — with cleaning,
-                trained staff supply and technical maintenance under one roof.
-              </p>
               <div className="flex gap-3.5 flex-wrap">
                 <a
                   href="/#quote"

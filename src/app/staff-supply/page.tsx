@@ -10,13 +10,13 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Manpower & Staff Supply | Cleaners, Housekeeping & Hospitality | Performa Care",
   description:
-    "Hire trained cleaners, housekeeping staff, office boys, waiters and hospitality staff across Dubai. Fast deployment with replacement support.",
+    "Hire trained, uniformed cleaners, housekeeping staff, office boys, waiters and waitresses across Dubai. Fast deployment with flexible contracts.",
 };
 
 const roles = [
   {
     title: "Cleaning Staff",
-    desc: "Trained cleaners for offices, villas, retail spaces, warehouses and more. Background-checked, uniformed and ready for daily or contract work.",
+    desc: "Trained cleaners for offices, villas, retail, warehouses, and commercial sites. Background-checked and ready for daily or contract work.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M9 3h6l-1 5h-4zM7 21l3-13h4l3 13z" />
@@ -25,7 +25,7 @@ const roles = [
   },
   {
     title: "Housekeeping Staff",
-    desc: "For homes, hotels, serviced apartments and staff accommodation. Experienced in maintaining high standards of cleanliness and organisation.",
+    desc: "Experienced staff for homes, hotels, serviced apartments, and staff accommodation. Skilled in maintaining high standards of cleanliness and organisation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M3 11l9-7 9 7v10H3z" />
@@ -35,7 +35,7 @@ const roles = [
   },
   {
     title: "Office Boys",
-    desc: "Reliable daily support for your office. Tea and coffee service, pantry management, document handling, guest assistance and general office support.",
+    desc: "Reliable daily support for your office: pantry management, serving refreshments, document handling, guest assistance, and general office support.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <rect x="4" y="7" width="16" height="13" rx="2" />
@@ -45,29 +45,19 @@ const roles = [
   },
   {
     title: "Waiters & Waitresses",
-    desc: "Event-ready staff for weddings, corporate functions and private parties. Courteous, well-presented and trained in professional service.",
+    desc: "Event-ready hospitality staff for weddings, corporate functions, and private parties. Courteous, well-presented, and trained in professional service.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
         <path d="M4 18h16M6 18a6 6 0 0112 0M12 9V7" />
       </svg>
     ),
   },
-  {
-    title: "Hospitality Staff",
-    desc: "Additional support for hotels, restaurants, cafés and serviced apartments as needed.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <path d="M3 21h18M5 21V8l7-5 7 5v13" />
-        <path d="M10 21v-5h4v5" />
-      </svg>
-    ),
-  },
 ];
 
 const reasons = [
-  "Trained professionals",
   "Fast deployment",
-  "Replacement support when required",
+  "Trained and supervised personnel",
+  "Flexible short-term or ongoing contracts",
   "One partner for both cleaning services and people",
 ];
 
@@ -88,8 +78,8 @@ export default function StaffSupplyPage() {
           image="/images/h8-banner1.jpg"
         >
           <p className="text-lg max-w-[720px] text-[#d8e4ee] mb-8">
-            Need people, not just a service? Performa Care supplies trained, reliable staff for
-            homes, offices, hotels, restaurants and events across Dubai.
+            Need reliable people, not just a cleaning service? Performa Care supplies trained,
+            uniformed staff for homes, offices, hotels, restaurants, and events across Dubai.
           </p>
           <CtaButtons
             primaryHref="/#quote"
@@ -110,7 +100,7 @@ export default function StaffSupplyPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {roles.map((role) => (
                 <article
                   key={role.title}
@@ -132,7 +122,7 @@ export default function StaffSupplyPage() {
                 Why Choose Our Staff
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                Why businesses and property managers choose our staff
+                Why choose our staff supply?
               </h2>
               <ul className="grid gap-3.5">
                 {reasons.map((reason) => (
@@ -154,7 +144,7 @@ export default function StaffSupplyPage() {
                 Hire trained staff today.
               </h3>
               <p className="text-[#cfe2f2] mb-7">
-                Tell us the role, location and schedule you need — we&apos;ll deploy the right people
+                Tell us the role, location, and schedule you need — we&apos;ll deploy the right people
                 for your site.
               </p>
               <CtaButtons
@@ -168,6 +158,13 @@ export default function StaffSupplyPage() {
                 Call{" "}
                 <a href="tel:+971502247589" className="font-bold text-white underline underline-offset-4">
                   +971 50 224 7589
+                </a>
+                {" | "}
+                <a
+                  href="mailto:info@performacaretechnical.com"
+                  className="font-bold text-white underline underline-offset-4"
+                >
+                  info@performacaretechnical.com
                 </a>
               </p>
             </div>
