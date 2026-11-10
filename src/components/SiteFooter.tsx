@@ -9,9 +9,9 @@ export default function SiteFooter() {
           <Image
             src="/images/logo-white-01.png"
             alt="Performa Care"
-            width={48}
-            height={48}
-            className="object-contain"
+            width={94}
+            height={94}
+            className="object-contain w-[84px] h-[84px]"
           />
           <span>
             © 2026 Performa Care Technical Services &amp; Performa Care Hospitality Services. Dubai,

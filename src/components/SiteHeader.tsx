@@ -31,26 +31,16 @@ export default function SiteHeader() {
 
       <header className="sticky top-0 z-50 bg-white/92 backdrop-blur-[10px] border-b border-line">
         <div className="w-[min(1180px,92%)] mx-auto">
-          <nav className="flex items-center justify-between h-[72px]">
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 font-extrabold text-xl"
-              aria-label="Performa Care home"
-            >
+          <nav className="flex items-center justify-between py-3 sm:py-3.5 min-h-[108px]">
+            <Link href="/" className="flex items-center" aria-label="Performa Care home">
               <Image
                 src="/images/mobile-logo-02-01.jpg"
                 alt="Performa Care logo"
-                width={42}
-                height={42}
-                className="rounded-[11px] object-cover"
+                width={94}
+                height={94}
+                className="rounded-[16px] object-cover w-[84px] h-[84px] sm:w-[94px] sm:h-[94px]"
                 priority
               />
-              <span className="leading-tight">
-                Performa Care
-                <small className="block text-[11px] font-semibold text-muted tracking-[0.08em]">
-                  TECHNICAL &amp; HOSPITALITY
-                </small>
-              </span>
             </Link>
 
             <div className="hidden lg:flex gap-7 font-semibold text-[15px]">
