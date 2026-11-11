@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { isLocale, locales } from "@/i18n/routing";
 import type { Locale } from "@/i18n/types";
@@ -18,5 +19,10 @@ export default async function LocaleLayout({
   if (!isLocale(raw)) notFound();
   const locale = raw as Locale;
 
-  return <LanguageProvider locale={locale}>{children}</LanguageProvider>;
+  return (
+    <LanguageProvider locale={locale}>
+      {children}
+      <WhatsAppFloat />
+    </LanguageProvider>
+  );
 }
