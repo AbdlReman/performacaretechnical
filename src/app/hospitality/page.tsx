@@ -155,10 +155,7 @@ export default function HospitalityPage() {
                 ))}
               </ul>
             </div>
-            <div
-              className="reveal rounded-[22px] p-8 sm:p-10 text-white"
-              style={{ background: "linear-gradient(135deg, #0f3f63, #081825)" }}
-            >
+            <div className="cta-band reveal rounded-[22px] p-8 sm:p-10 text-white">
               <h3 className="text-[28px] font-extrabold tracking-[-0.02em] mb-3 text-white">
                 Book waiters for events or hire hospitality staff in Dubai.
               </h3>

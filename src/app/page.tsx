@@ -555,11 +555,7 @@ export default function Home() {
         </section>
 
         {/* Quote */}
-        <section
-          id="quote"
-          className="py-16 sm:py-[90px]"
-          style={{ background: "linear-gradient(135deg, #0f3f63, #081825)" }}
-        >
+        <section id="quote" className="cta-band py-16 sm:py-[90px]">
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-[50px] items-center text-white">
             <div className="reveal">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-[#74c1f8] mb-3">
