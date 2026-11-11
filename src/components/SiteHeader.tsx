@@ -8,7 +8,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function SiteHeader() {
-  const { t, localizeHref } = useLanguage();
+  const { t, localizeHref, locale } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
@@ -39,6 +39,11 @@ export default function SiteHeader() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Close drawer when locale/route context changes via language toggle.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [locale]);
+
   function closeMenu() {
     setMenuOpen(false);
   }
@@ -60,12 +65,9 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <header
-        className="sticky top-0 z-50 backdrop-blur-[10px] border-b border-line"
-        style={{ background: "var(--header-bg)" }}
-      >
+      <header className="sticky top-0 z-50 border-b border-line bg-background">
         <div className="w-[min(1180px,92%)] mx-auto">
-          <nav className="flex items-center justify-between gap-3 py-3 sm:py-3.5 min-h-[96px] sm:min-h-[108px]">
+          <nav className="relative z-[60] flex items-center justify-between gap-3 py-3 sm:py-3.5 min-h-[96px] sm:min-h-[108px] bg-background">
             <Link
               href={localizeHref("/")}
               className="flex items-center shrink-0 overflow-visible"
@@ -109,7 +111,7 @@ export default function SiteHeader() {
               </Link>
               <button
                 type="button"
-                className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink transition hover:border-blue hover:text-blue"
+                className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-background text-ink transition hover:border-blue hover:text-blue"
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
                 aria-controls="mobile-nav"
@@ -138,35 +140,32 @@ export default function SiteHeader() {
           </nav>
         </div>
 
-        <div
-          className={`xl:hidden fixed inset-0 z-40 bg-[#0d2236]/45 transition-opacity duration-200 ${
-            menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
-          onClick={closeMenu}
-          aria-hidden={!menuOpen}
-        />
-
+        {/* Full-screen solid panel — nothing from the page shows through */}
         <div
           id="mobile-nav"
-          className={`xl:hidden absolute left-0 right-0 top-full z-50 border-b border-line shadow-[0_18px_40px_rgba(13,34,54,.18)] transition-all duration-200 origin-top ${
+          className={`xl:hidden fixed inset-0 z-[55] bg-background transition-transform duration-300 ease-out ${
             menuOpen
-              ? "opacity-100 translate-y-0 visible"
-              : "opacity-0 -translate-y-2 invisible pointer-events-none"
+              ? "translate-x-0 pointer-events-auto"
+              : locale === "ar"
+                ? "translate-x-full pointer-events-none"
+                : "-translate-x-full pointer-events-none"
           }`}
-          style={{ background: "var(--header-bg)" }}
+          aria-hidden={!menuOpen}
         >
-          <div className="w-[min(1180px,92%)] mx-auto py-4 pb-6">
-            <div className="grid gap-1">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className="rounded-xl px-3.5 py-3 text-[15px] font-semibold text-ink hover:bg-surface hover:text-blue transition"
-                >
-                  {link.label}
-                </Link>
-              ))}
+          <div className="flex h-full flex-col pt-[calc(env(safe-area-inset-top)+120px)] pb-8">
+            <div className="w-[min(1180px,92%)] mx-auto flex-1 overflow-y-auto">
+              <nav className="grid gap-1 py-2" aria-label="Mobile">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="rounded-xl px-4 py-3.5 text-[16px] font-semibold text-ink hover:bg-surface hover:text-blue transition"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
           </div>
         </div>
