@@ -19,6 +19,7 @@ export const en = {
     getQuote: "Get a Quote",
     getCleaningQuote: "Get a Cleaning Quote",
     hireStaff: "Hire Staff",
+    getStaff: "Get Staff",
     viewServices: "View Services",
     seeProcess: "See Process",
     hireTrainedStaff: "Hire Trained Staff",

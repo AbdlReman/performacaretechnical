@@ -56,7 +56,7 @@ export default function StaffSupplyPage() {
           <p className="text-lg max-w-[720px] text-[#d8e4ee] mb-8">{p.lead}</p>
           <CtaButtons
             primaryHref="/#quote"
-            primaryLabel={t.common.hireStaff}
+            primaryLabel={t.common.getStaff}
             secondaryHref="/services"
             secondaryLabel={t.common.viewServices}
           />
@@ -114,7 +114,7 @@ export default function StaffSupplyPage() {
               <p className="text-[#cfe2f2] mb-7">{p.hireLead}</p>
               <CtaButtons
                 primaryHref="/#quote"
-                primaryLabel={t.common.hireStaff}
+                primaryLabel={t.common.getStaff}
                 secondaryHref="/process"
                 secondaryLabel={t.common.seeProcess}
                 showCall

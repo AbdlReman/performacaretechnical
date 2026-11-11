@@ -21,6 +21,7 @@ export const ar: Dictionary = {
     getQuote: "اطلب عرض سعر",
     getCleaningQuote: "اطلب عرض تنظيف",
     hireStaff: "وظّف موظفين",
+    getStaff: "احصل على موظفين",
     viewServices: "عرض الخدمات",
     seeProcess: "آلية العمل",
     hireTrainedStaff: "وظّف موظفين مدربين",
