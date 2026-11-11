@@ -99,10 +99,8 @@ export default function SiteHeader() {
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-              <div className="hidden sm:flex items-center gap-2 sm:gap-3">
-                <LanguageToggle />
-                <ThemeToggle />
-              </div>
+              <LanguageToggle />
+              <ThemeToggle />
               <Link
                 href={localizeHref("/#quote")}
                 className="hidden xl:inline-flex items-center gap-2 px-[22px] py-3.5 rounded-full font-bold text-[15px] bg-blue text-white border-2 border-transparent transition hover:bg-[#124c75] hover:-translate-y-0.5"
@@ -158,10 +156,6 @@ export default function SiteHeader() {
           style={{ background: "var(--header-bg)" }}
         >
           <div className="w-[min(1180px,92%)] mx-auto py-4 pb-6">
-            <div className="flex items-center gap-2 mb-4 sm:hidden">
-              <LanguageToggle />
-              <ThemeToggle />
-            </div>
             <div className="grid gap-1">
               {links.map((link) => (
                 <Link
@@ -173,14 +167,6 @@ export default function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
-            </div>
-            <div className="mt-4 grid gap-2 border-t border-line pt-4 text-sm text-muted">
-              <a href="tel:+971502247589" className="font-semibold text-ink hover:text-blue">
-                +971 50 224 7589
-              </a>
-              <a href="mailto:info@performacaretechnical.com" className="font-semibold text-ink hover:text-blue break-all">
-                info@performacaretechnical.com
-              </a>
             </div>
           </div>
         </div>
