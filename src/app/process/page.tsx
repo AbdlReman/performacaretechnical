@@ -96,7 +96,7 @@ export default function ProcessPage() {
 
         <section
           className="py-16 sm:py-[90px] text-white"
-          style={{ background: "linear-gradient(135deg, var(--blue), #0f3f63)" }}
+          style={{ background: "linear-gradient(135deg, #0f3f63, #081825)" }}
         >
           <div className="w-[min(1180px,92%)] mx-auto reveal text-center max-w-[760px]">
             <h2 className="text-[clamp(26px,4vw,40px)] font-extrabold tracking-[-0.02em] mb-4 text-white">
