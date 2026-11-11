@@ -157,7 +157,7 @@ export default function HospitalityPage() {
             </div>
             <div
               className="reveal rounded-[22px] p-8 sm:p-10 text-white"
-              style={{ background: "linear-gradient(135deg, var(--blue), #0f3f63)" }}
+              style={{ background: "linear-gradient(135deg, #0f3f63, #081825)" }}
             >
               <h3 className="text-[28px] font-extrabold tracking-[-0.02em] mb-3 text-white">
                 Book waiters for events or hire hospitality staff in Dubai.
