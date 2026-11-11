@@ -120,8 +120,8 @@ export default function WhyUsPage() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal relative">
               <Image
-                src="/images/h8-banner1.jpg"
-                alt="Performa Care professional team member"
+                src="/images/whyus.jpg"
+                alt="Trusted Performa Care partner for clean and well-maintained properties in Dubai"
                 width={1000}
                 height={1200}
                 className="rounded-3xl h-[340px] lg:h-[480px] w-full object-cover"
