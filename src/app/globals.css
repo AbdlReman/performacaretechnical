@@ -67,6 +67,10 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+html[dir="rtl"] body {
+  font-family: var(--font-noto-arabic), var(--font-plus-jakarta), system-ui, sans-serif;
+}
+
 /* Remap card/surface whites in dark mode (keep CTA link whites intact) */
 .dark :where(div, article, section, li, form, details).bg-white {
   background-color: var(--card);

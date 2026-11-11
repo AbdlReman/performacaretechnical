@@ -1,23 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import LanguageToggle from "@/components/LanguageToggle";
 import ThemeToggle from "@/components/ThemeToggle";
-
-const links = [
-  { href: "/about-us", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/staff-supply", label: "Staff Supply" },
-  { href: "/hospitality", label: "Hospitality" },
-  { href: "/why-us", label: "Why Us" },
-  { href: "/process", label: "Process" },
-  { href: "/faq", label: "FAQ" },
-];
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function SiteHeader() {
+  const { t, localizeHref } = useLanguage();
+
+  const links = [
+    { href: localizeHref("/about-us"), label: t.nav.about },
+    { href: localizeHref("/services"), label: t.nav.services },
+    { href: localizeHref("/staff-supply"), label: t.nav.staff },
+    { href: localizeHref("/hospitality"), label: t.nav.hospitality },
+    { href: localizeHref("/why-us"), label: t.nav.whyUs },
+    { href: localizeHref("/process"), label: t.nav.process },
+    { href: localizeHref("/faq"), label: t.nav.faq },
+  ];
+
   return (
     <>
       <div className="bg-[#0d2236] text-[#c9d6e3] text-[13px]">
         <div className="w-[min(1180px,92%)] mx-auto flex justify-between gap-3 py-2 flex-wrap">
-          <span>Office 476, Arjumand Building, Green Community Village, Dubai</span>
+          <span>{t.topBar.address}</span>
           <span className="hidden md:inline">
             <a href="tel:+971502247589" className="hover:text-white transition">
               +971 50 224 7589
@@ -36,10 +42,10 @@ export default function SiteHeader() {
       >
         <div className="w-[min(1180px,92%)] mx-auto">
           <nav className="flex items-center justify-between gap-3 py-3 sm:py-3.5 min-h-[108px]">
-            <Link href="/" className="flex items-center shrink-0" aria-label="Performa Care home">
+            <Link href={localizeHref("/")} className="flex items-center shrink-0" aria-label={t.brand}>
               <Image
                 src="/images/logo.png"
-                alt="Performa Care logo"
+                alt={t.brand}
                 width={94}
                 height={94}
                 className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] dark:hidden"
@@ -47,7 +53,7 @@ export default function SiteHeader() {
               />
               <Image
                 src="/images/logo-white-01.png"
-                alt="Performa Care logo"
+                alt={t.brand}
                 width={94}
                 height={94}
                 className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] hidden dark:block"
@@ -55,7 +61,7 @@ export default function SiteHeader() {
               />
             </Link>
 
-            <div className="hidden lg:flex gap-7 font-semibold text-[15px] text-ink">
+            <div className="hidden xl:flex gap-6 font-semibold text-[15px] text-ink">
               {links.map((link) => (
                 <Link key={link.href} href={link.href} className="hover:text-blue transition">
                   {link.label}
@@ -63,13 +69,14 @@ export default function SiteHeader() {
               ))}
             </div>
 
-            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+              <LanguageToggle />
               <ThemeToggle />
               <Link
-                href="/#quote"
-                className="inline-flex items-center gap-2 px-4 sm:px-[26px] py-3 sm:py-3.5 rounded-full font-bold text-[14px] sm:text-[15px] bg-blue text-white border-2 border-transparent transition hover:bg-[#124c75] hover:-translate-y-0.5"
+                href={localizeHref("/#quote")}
+                className="inline-flex items-center gap-2 px-3 sm:px-[22px] py-3 sm:py-3.5 rounded-full font-bold text-[13px] sm:text-[15px] bg-blue text-white border-2 border-transparent transition hover:bg-[#124c75] hover:-translate-y-0.5"
               >
-                Get a Quote
+                {t.nav.quote}
               </Link>
             </div>
           </nav>

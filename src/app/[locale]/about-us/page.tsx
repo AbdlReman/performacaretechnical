@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import CtaButtons from "@/components/CtaButtons";
@@ -7,102 +8,65 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
-export const metadata: Metadata = {
-  title: "About Performa Care | Technical, Cleaning & Hospitality Services in Dubai",
-  description:
-    "Performa Care Technical Services and Performa Care Hospitality Services provide cleaning, trained staff supply, hospitality staffing and MEP maintenance across Dubai. 2-hour response. Call +971 50 224 7589.",
-};
-
-const reasons = [
-  {
-    title: "2-Hour Response",
-    desc: "We respond to any issue on your site within 2 hours.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Trained Professionals",
-    desc: "Skilled teams that use modern equipment and follow clear standards.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Eco-Friendly Products",
-    desc: "Non-toxic, biodegradable cleaning products as part of our sustainability program.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z" />
-        <path d="M5 21l7-7" />
-      </svg>
-    ),
-  },
-  {
-    title: "Agreed Schedules",
-    desc: "Visit dates are agreed for each site so management stays consistent.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <path d="M8 7V3m8 4V3M4 11h16M5 5h14v16H5z" />
-      </svg>
-    ),
-  },
-  {
-    title: "One Partner",
-    desc: "Cleaning, staffing, and technical maintenance under one roof.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
-        <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
-      </svg>
-    ),
-  },
-];
-
-const spaces = [
-  "Offices",
-  "Villas",
-  "Hotels",
-  "Restaurants",
-  "Cafés",
-  "Retail",
-  "Warehouses",
-  "Staff accommodation",
-  "Event venues",
+const reasonIcons = [
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6" key="0">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6" key="1">
+      <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6" key="2">
+      <path d="M5 21c0-9 6-15 15-16-1 9-7 15-15 16z" />
+      <path d="M5 21l7-7" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6" key="3">
+      <path d="M8 7V3m8 4V3M4 11h16M5 5h14v16H5z" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6" key="4">
+      <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
+    </svg>
+  ),
 ];
 
 export default function AboutUsPage() {
+  const { t, locale, localizeHref } = useLanguage();
+  const p = t.aboutPage;
+  const arrow = locale === "ar" ? "←" : "→";
+
   return (
     <>
       <Reveal />
       <SiteHeader />
       <main>
         <PageHero
-          eyebrow="About Performa Care"
+          eyebrow={p.eyebrow}
           title={
             <>
-              Professional Technical, Cleaning &amp;{" "}
-              <em className="not-italic text-sky">Hospitality Services</em> in Dubai
+              {p.titleBefore}{" "}
+              <em className="not-italic text-sky">{p.titleHighlight}</em> {p.titleAfter}
             </>
           }
           image="/images/h8-banner1.jpg"
         >
-          <p className="text-lg max-w-[760px] text-[#d8e4ee] mb-8">
-            Performa Care Technical Services and Performa Care Hospitality Services are based in
-            Dubai. We provide professional technical, maintenance, cleaning, and staffing solutions
-            for residential, commercial, and business properties across Dubai.
-          </p>
+          <p className="text-lg max-w-[760px] text-[#d8e4ee] mb-8">{p.lead}</p>
           <CtaButtons
             primaryHref="/#quote"
-            primaryLabel="Get a Cleaning Quote"
+            primaryLabel={t.common.getCleaningQuote}
             secondaryHref="/staff-supply"
-            secondaryLabel="Hire Staff"
+            secondaryLabel={t.common.hireStaff}
           />
         </PageHero>
 
@@ -110,22 +74,13 @@ export default function AboutUsPage() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Who We Are
+                {p.whoEyebrow}
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                Comfort, productivity, and peace of mind
+                {p.whoTitle}
               </h2>
-              <p className="text-muted text-[17px] mb-5">
-                A well-maintained property is essential for comfort, productivity, and peace of mind.
-                That is why we focus on reliable execution, attention to detail, and customer
-                satisfaction on every site.
-              </p>
-              <p className="text-muted text-[17px]">
-                Our team delivers commercial cleaning, residential cleaning, trained staff supply,
-                hospitality staffing, and MEP maintenance. From regular office cleaning and villa deep
-                cleans to marble polishing, carpet shampooing, and event waiters, we act as a single
-                trusted partner.
-              </p>
+              <p className="text-muted text-[17px] mb-5">{p.whoP1}</p>
+              <p className="text-muted text-[17px]">{p.whoP2}</p>
             </div>
             <Image
               src="/images/shopping-mall-cleaning-660x410.jpg"
@@ -141,19 +96,19 @@ export default function AboutUsPage() {
           <div className="w-[min(1180px,92%)] mx-auto">
             <div className="reveal max-w-[720px] mb-10">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Why Choose Us
+                {p.whyEyebrow}
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15]">
-                Why businesses and property managers choose us
+                {p.whyTitle}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-              {reasons.map((item) => (
+              {p.reasons.map((item, i) => (
                 <article
                   key={item.title}
                   className="reveal bg-white border border-line rounded-[18px] p-6"
                 >
-                  <IconBox className="mb-4">{item.icon}</IconBox>
+                  <IconBox className="mb-4">{reasonIcons[i]}</IconBox>
                   <h3 className="text-lg font-bold mb-2 tracking-[-0.02em]">{item.title}</h3>
                   <p className="text-muted text-[15px]">{item.desc}</p>
                 </article>
@@ -166,17 +121,14 @@ export default function AboutUsPage() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start">
             <div className="reveal">
               <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
-                Areas We Serve
+                {p.areasEyebrow}
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-4">
-                Across Dubai
+                {p.areasTitle}
               </h2>
-              <p className="text-muted text-[17px] mb-6">
-                We serve offices, villas, hotels, restaurants, cafés, retail, warehouses, staff
-                accommodation, and event venues across Dubai.
-              </p>
+              <p className="text-muted text-[17px] mb-6">{p.areasLead}</p>
               <div className="flex flex-wrap gap-2.5 mb-8">
-                {spaces.map((space) => (
+                {p.spaces.map((space) => (
                   <span
                     key={space}
                     className="text-sm font-semibold bg-surface border border-line px-3.5 py-2 rounded-full text-[#33495e]"
@@ -187,22 +139,22 @@ export default function AboutUsPage() {
               </div>
               <div className="flex gap-3.5 flex-wrap">
                 <Link
-                  href="/services"
+                  href={localizeHref("/services")}
                   className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] bg-blue text-white transition hover:bg-[#124c75] hover:-translate-y-0.5"
                 >
-                  View Services →
+                  {t.common.viewServices} {arrow}
                 </Link>
                 <Link
-                  href="/hospitality"
+                  href={localizeHref("/hospitality")}
                   className="inline-flex items-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] border-2 border-blue text-blue transition hover:bg-blue hover:text-white"
                 >
-                  Hospitality Services
+                  {t.nav.hospitality}
                 </Link>
               </div>
             </div>
 
             <div className="reveal bg-white border border-line rounded-[22px] p-7 sm:p-9">
-              <h3 className="text-2xl font-extrabold tracking-[-0.02em] mb-5">Contact</h3>
+              <h3 className="text-2xl font-extrabold tracking-[-0.02em] mb-5">{p.contactTitle}</h3>
               <div className="grid gap-4 mb-7">
                 <div className="flex gap-3 items-start">
                   <IconBox>
@@ -218,10 +170,8 @@ export default function AboutUsPage() {
                     </svg>
                   </IconBox>
                   <div>
-                    <b className="block mb-1">Office</b>
-                    <span className="text-muted text-[15px]">
-                      Office 476, 4th Floor, Arjumand Building, 17th St, Green Community Village, Dubai
-                    </span>
+                    <b className="block mb-1">{t.common.office}</b>
+                    <span className="text-muted text-[15px]">{p.address}</span>
                   </div>
                 </div>
                 <a href="tel:+971502247589" className="flex gap-3 items-start hover:opacity-80 transition">
@@ -237,7 +187,7 @@ export default function AboutUsPage() {
                     </svg>
                   </IconBox>
                   <div>
-                    <b className="block mb-1">Phone</b>
+                    <b className="block mb-1">{t.common.phone}</b>
                     <span className="text-muted text-[15px]">+971 50 224 7589</span>
                   </div>
                 </a>
@@ -258,16 +208,16 @@ export default function AboutUsPage() {
                     </svg>
                   </IconBox>
                   <div>
-                    <b className="block mb-1">Email</b>
-                    <span className="text-muted text-[15px]">info@performacaretechnical.com</span>
+                    <b className="block mb-1">{t.form.email}</b>
+                    <span className="text-muted text-[15px]">{t.common.email}</span>
                   </div>
                 </a>
               </div>
               <CtaButtons
                 primaryHref="/#quote"
-                primaryLabel="Get a Cleaning Quote"
+                primaryLabel={t.common.getCleaningQuote}
                 secondaryHref="/staff-supply"
-                secondaryLabel="Hire Staff"
+                secondaryLabel={t.common.hireStaff}
                 showCall={false}
                 light={false}
               />
