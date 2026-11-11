@@ -9,7 +9,8 @@ export default function IconBox({
 }) {
   return (
     <div
-      className={`shrink-0 w-[46px] h-[46px] rounded-xl bg-[#e8f3fc] grid place-items-center text-blue ${className}`}
+      className={`shrink-0 w-[46px] h-[46px] rounded-xl grid place-items-center text-blue ${className}`}
+      style={{ background: "var(--icon-bg)" }}
     >
       {children}
     </div>

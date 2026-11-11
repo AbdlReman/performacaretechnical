@@ -472,14 +472,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-16 sm:py-[90px] bg-ink text-white">
+        {/* Testimonials — always dark in both themes */}
+        <section className="py-16 sm:py-[90px] bg-[#0d2236] text-white">
           <div className="w-[min(1180px,92%)] mx-auto">
             <div className="reveal">
-              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-sky mb-3">
+              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-[#74c1f8] mb-3">
                 Client Feedback
               </span>
-              <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-3.5">
+              <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-3.5 text-white">
                 What Our Clients Say
               </h2>
               <p className="text-[#a9bccd] text-[17px] max-w-[640px]">
@@ -506,10 +506,10 @@ export default function Home() {
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="reveal bg-white/6 border border-dashed border-sky/50 rounded-[18px] p-[26px]"
+                  className="reveal bg-white/6 border border-dashed border-[#74c1f8]/50 rounded-[18px] p-[26px]"
                 >
                   <p className="text-[#d4e1ec] italic mb-4">&ldquo;{t.quote}&rdquo;</p>
-                  <b className="text-sky">{t.name}</b>
+                  <b className="text-[#74c1f8]">{t.name}</b>
                 </div>
               ))}
             </div>

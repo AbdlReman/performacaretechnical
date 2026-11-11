@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --blue: #1a6397;
   --sky: #74c1f8;
@@ -10,6 +12,25 @@
   --radius: 18px;
   --background: #ffffff;
   --foreground: #0d2236;
+  --card: #ffffff;
+  --icon-bg: #e8f3fc;
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --soft-from: #f3f9fe;
+}
+
+.dark {
+  --blue: #4da3d9;
+  --sky: #74c1f8;
+  --ink: #e8eef4;
+  --muted: #9bb0c3;
+  --bg: #121f2e;
+  --line: #2a3b4f;
+  --background: #0b1520;
+  --foreground: #e8eef4;
+  --card: #152536;
+  --icon-bg: #1c3348;
+  --header-bg: rgba(11, 21, 32, 0.92);
+  --soft-from: #152536;
 }
 
 @theme inline {
@@ -21,6 +42,7 @@
   --color-muted: var(--muted);
   --color-surface: var(--bg);
   --color-line: var(--line);
+  --color-card: var(--card);
   --font-sans: var(--font-plus-jakarta);
   --radius-card: var(--radius);
 }
@@ -33,6 +55,32 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Remap card/surface whites in dark mode (keep CTA link whites intact) */
+.dark :where(div, article, section, li, form, details).bg-white {
+  background-color: var(--card);
+}
+
+.dark .text-\[\#33495e\] {
+  color: var(--muted);
+}
+
+.dark .bg-\[\#e8f3fc\] {
+  background-color: var(--icon-bg);
+}
+
+.dark .from-\[\#f3f9fe\] {
+  --tw-gradient-from: var(--soft-from);
+}
+
+.dark .to-white {
+  --tw-gradient-to: var(--card);
+}
+
+.dark a.bg-white {
+  color: #0d2236;
 }
 
 .reveal {

@@ -14,7 +14,7 @@ export default function QuoteForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="bg-white rounded-[22px] p-6 sm:p-[34px] text-ink shadow-[0_30px_60px_-20px_rgba(0,0,0,.35)]"
+      className="bg-card rounded-[22px] p-6 sm:p-[34px] text-ink shadow-[0_30px_60px_-20px_rgba(0,0,0,.35)]"
     >
       <h3 className="text-[22px] font-extrabold mb-[18px] tracking-[-0.02em]">
         Get a cleaning quote or hire staff
@@ -30,7 +30,7 @@ export default function QuoteForm() {
             name="name"
             required
             placeholder="Your name"
-            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white"
+            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
           />
         </div>
         <div>
@@ -43,7 +43,7 @@ export default function QuoteForm() {
             type="tel"
             required
             placeholder="+971"
-            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white"
+            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function QuoteForm() {
         name="email"
         type="email"
         placeholder="you@company.com"
-        className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white"
+        className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -67,7 +67,7 @@ export default function QuoteForm() {
           <select
             id="s1"
             name="service"
-            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white"
+            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
           >
             <option>Commercial cleaning</option>
             <option>Residential cleaning</option>
@@ -85,7 +85,7 @@ export default function QuoteForm() {
           <select
             id="t1"
             name="property"
-            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white"
+            className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
           >
             <option>Office</option>
             <option>Villa / Home</option>
@@ -104,7 +104,7 @@ export default function QuoteForm() {
         name="message"
         rows={3}
         placeholder="Tell us about your requirements"
-        className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-white resize-y"
+        className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card resize-y"
       />
 
       <button
