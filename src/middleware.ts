@@ -1,8 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  ADMIN_SESSION_COOKIE,
+  createAdminSessionToken,
+  getAdminSecret,
+  tokensMatch,
+} from "@/lib/admin-session";
 
 const PUBLIC_FILE = /\.[^/]+$/;
 
-export function middleware(request: NextRequest) {
+async function isAdminAuthed(request: NextRequest): Promise<boolean> {
+  const secret = getAdminSecret();
+  if (!secret) return false;
+  const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
+  if (!token) return false;
+  const expected = await createAdminSessionToken(secret);
+  return tokensMatch(token, expected); // equal-length hex compare
+}
+
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (
@@ -10,6 +25,28 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     PUBLIC_FILE.test(pathname)
   ) {
+    return NextResponse.next();
+  }
+
+  // Admin is English-only and outside locale rewrites.
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    const authed = await isAdminAuthed(request);
+    const isLogin = pathname === "/admin/login";
+
+    if (!authed && !isLogin) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/login";
+      url.searchParams.set("next", pathname);
+      return NextResponse.redirect(url);
+    }
+
+    if (authed && isLogin) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
+
     return NextResponse.next();
   }
 
