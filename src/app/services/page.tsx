@@ -251,7 +251,7 @@ export default function ServicesPage() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
             <article id="manpower" className="reveal bg-white border border-line rounded-[18px] p-7">
               <Image
-                src="/images/h8-banner1.jpg"
+                src="/images/manpowerstaffsupply.jpg"
                 alt="Manpower and staff supply"
                 width={600}
                 height={360}
@@ -278,7 +278,7 @@ export default function ServicesPage() {
 
             <article id="hospitality" className="reveal bg-white border border-line rounded-[18px] p-7">
               <Image
-                src="/images/update-banner2-372x401.jpg"
+                src="/images/Hospitalitystaffing.jpg"
                 alt="Hospitality staffing for events"
                 width={600}
                 height={360}
@@ -296,7 +296,7 @@ export default function ServicesPage() {
 
             <article id="mep" className="reveal bg-white border border-line rounded-[18px] p-7">
               <Image
-                src="/images/bg-slider91.jpg"
+                src="/images/MaintenanceMEP.jpg"
                 alt="MEP technical maintenance"
                 width={600}
                 height={360}
