@@ -42,7 +42,15 @@ export default function SiteHeader() {
                 alt="Performa Care logo"
                 width={94}
                 height={94}
-                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px]"
+                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] dark:hidden"
+                priority
+              />
+              <Image
+                src="/images/logo-white-01.png"
+                alt="Performa Care logo"
+                width={94}
+                height={94}
+                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] hidden dark:block"
                 priority
               />
             </Link>
