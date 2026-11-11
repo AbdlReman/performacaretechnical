@@ -25,7 +25,6 @@ export default function SubscribeSection() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: data.get("name"),
           email: data.get("email"),
           locale,
         }),
@@ -61,27 +60,22 @@ export default function SubscribeSection() {
         </div>
 
         <form onSubmit={onSubmit} className="rounded-[18px] border border-white/15 bg-white/8 p-5 sm:p-6 backdrop-blur-sm">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input
-              name="name"
-              placeholder={s.namePh}
-              className="w-full rounded-[10px] border border-white/20 bg-white/10 px-3.5 py-3 text-[15px] text-white placeholder:text-[#cfe2f2]/80 outline-none focus:border-[#74c1f8]"
-            />
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               name="email"
               type="email"
               required
               placeholder={s.emailPh}
-              className="w-full rounded-[10px] border border-white/20 bg-white/10 px-3.5 py-3 text-[15px] text-white placeholder:text-[#cfe2f2]/80 outline-none focus:border-[#74c1f8]"
+              className="w-full flex-1 rounded-[10px] border border-white/20 bg-white/10 px-3.5 py-3 text-[15px] text-white placeholder:text-[#cfe2f2]/80 outline-none focus:border-[#74c1f8]"
             />
+            <button
+              type="submit"
+              disabled={loading}
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-[22px] py-3.5 text-[15px] font-bold text-[#0d2236] transition hover:bg-[#74c1f8] disabled:opacity-60"
+            >
+              {loading ? s.sending : s.submit} {arrow}
+            </button>
           </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="mt-3 w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-[22px] py-3.5 text-[15px] font-bold text-[#0d2236] transition hover:bg-[#74c1f8] disabled:opacity-60"
-          >
-            {loading ? s.sending : s.submit} {arrow}
-          </button>
           {error ? <p className="mt-3 text-sm font-semibold text-[#fecaca]">{error}</p> : null}
           {sent ? <p className="mt-3 text-sm font-semibold text-[#bbf7d0]">{s.thanks}</p> : null}
         </form>
