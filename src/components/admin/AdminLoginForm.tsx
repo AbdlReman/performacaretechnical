@@ -42,7 +42,7 @@ export default function AdminLoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <div>
-        <label htmlFor="admin-secret" className="mb-2 block text-sm font-bold text-[#0d2236]">
+        <label htmlFor="admin-secret" className="mb-2 block text-sm font-bold text-[#e8eef4]">
           Admin secret key
         </label>
         <input
@@ -54,12 +54,12 @@ export default function AdminLoginForm() {
           value={secret}
           onChange={(e) => setSecret(e.target.value)}
           placeholder="Enter ADMIN_SECRET_KEY"
-          className="w-full rounded-xl border border-[#d7e2ec] bg-white px-4 py-3 text-[15px] outline-none transition focus:border-[#1a6397] focus:ring-2 focus:ring-[#1a6397]/20"
+          className="w-full rounded-xl border border-[#2a3b4f] bg-[#0b1520] px-4 py-3 text-[15px] text-[#e8eef4] outline-none transition placeholder:text-[#6b7f92] focus:border-[#4da3d9] focus:ring-2 focus:ring-[#1a6397]/40"
         />
       </div>
 
       {error ? (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+        <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-[#fca5a5]">
           {error}
         </p>
       ) : null}
