@@ -7,6 +7,7 @@ import QuoteForm from "@/components/QuoteForm";
 import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import SubscribeSection from "@/components/SubscribeSection";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 const serviceMedia = [
@@ -475,6 +476,7 @@ export default function Home() {
         </section>
       </main>
 
+      <SubscribeSection />
       <SiteFooter />
     </>
   );

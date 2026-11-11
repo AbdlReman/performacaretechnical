@@ -206,7 +206,9 @@ export const en = {
     message: "Message",
     messagePh: "Tell us about your requirements",
     submit: "Send Request",
+    sending: "Sending...",
     thanks: "Thank you! We'll be in touch shortly.",
+    error: "Something went wrong. Please try again.",
     services: [
       "Commercial cleaning",
       "Residential cleaning",
@@ -218,8 +220,26 @@ export const en = {
     ],
     properties: ["Office", "Villa / Home", "Retail / Mall", "Hotel / Restaurant", "Other"],
   },
+  subscribe: {
+    eyebrow: "Stay updated",
+    title: "Subscribe for cleaning & staffing updates",
+    lead: "Get service news, staffing availability tips, and offers from Performa Care in Dubai.",
+    namePh: "Your name (optional)",
+    emailPh: "Email address",
+    submit: "Subscribe",
+    sending: "Saving...",
+    thanks: "You're subscribed. Thank you!",
+    error: "Could not subscribe. Please try again.",
+  },
   footer: {
-    copy: "© 2026 Performa Care Technical Services & Performa Care Hospitality Services. Dubai, UAE.",
+    tagline: "Professional technical, cleaning and hospitality staffing across Dubai.",
+    company: "Company",
+    services: "Services",
+    officialInfo: "Official info",
+    address:
+      "Office number 476, Arjumand Building 17th Street, Green Community Village 4th Floor - Dubai",
+    copy: "© 2026 Performa Care Technical Services & Performa Care Hospitality Services.",
+    rights: "Dubai, UAE",
   },
   lang: {
     en: "EN",

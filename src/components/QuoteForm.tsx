@@ -6,12 +6,48 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 export default function QuoteForm() {
   const { t, locale } = useLanguage();
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const arrow = locale === "ar" ? "←" : "→";
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
-    e.currentTarget.reset();
+    setError("");
+    setSent(false);
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("/api/quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          phone: data.get("phone"),
+          email: data.get("email"),
+          service: data.get("service"),
+          property: data.get("property"),
+          message: data.get("message"),
+          locale,
+        }),
+      });
+
+      const payload = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) {
+        setError(payload.error || t.form.error);
+        setLoading(false);
+        return;
+      }
+
+      setSent(true);
+      form.reset();
+    } catch {
+      setError(t.form.error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -104,10 +140,15 @@ export default function QuoteForm() {
 
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] bg-blue text-white border-2 border-transparent transition hover:bg-[#124c75] hover:-translate-y-0.5 cursor-pointer"
+        disabled={loading}
+        className="w-full inline-flex items-center justify-center gap-2 px-[26px] py-3.5 rounded-full font-bold text-[15px] bg-blue text-white border-2 border-transparent transition hover:bg-[#124c75] hover:-translate-y-0.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {t.form.submit} {arrow}
+        {loading ? t.form.sending : t.form.submit} {arrow}
       </button>
+
+      {error ? (
+        <div className="bg-[#fef2f2] text-[#b91c1c] p-3 rounded-[10px] mt-3 font-semibold">{error}</div>
+      ) : null}
 
       {sent && (
         <div className="bg-[#e7f8ee] text-[#166534] p-3 rounded-[10px] mt-3 font-semibold">
