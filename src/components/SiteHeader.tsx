@@ -34,11 +34,11 @@ export default function SiteHeader() {
           <nav className="flex items-center justify-between py-3 sm:py-3.5 min-h-[108px]">
             <Link href="/" className="flex items-center shrink-0" aria-label="Performa Care home">
               <Image
-                src="/images/mobile-logo-02-01.jpg"
+                src="/images/logo.png"
                 alt="Performa Care logo"
                 width={94}
                 height={94}
-                className="object-contain rounded-[5px] w-[84px] h-[84px] sm:w-[94px] sm:h-[94px]"
+                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px]"
                 priority
               />
             </Link>
