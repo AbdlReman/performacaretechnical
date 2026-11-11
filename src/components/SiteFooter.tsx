@@ -27,13 +27,17 @@ export default function SiteFooter() {
       <div className="w-[min(1180px,92%)] mx-auto py-12 sm:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div>
-            <Link href={localizeHref("/")} className="inline-flex items-center gap-3 mb-4" aria-label={t.brand}>
+            <Link
+              href={localizeHref("/")}
+              className="inline-flex items-center gap-3 mb-4 overflow-visible"
+              aria-label={t.brand}
+            >
               <Image
                 src="/images/logo-white-01.png"
                 alt={t.brand}
-                width={72}
-                height={72}
-                className="object-contain w-[64px] h-[64px]"
+                width={2825}
+                height={2705}
+                className="h-[72px] w-auto max-w-none object-contain object-left"
               />
             </Link>
             <p className="text-white font-bold text-base mb-2">{t.brand}</p>

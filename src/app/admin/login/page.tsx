@@ -12,9 +12,9 @@ export default function AdminLoginPage() {
             <Image
               src="/images/logo-white-01.png"
               alt="Performa Care"
-              width={72}
-              height={72}
-              className="mx-auto mb-4 h-[72px] w-[72px] object-contain"
+              width={2825}
+              height={2705}
+              className="mx-auto mb-4 h-[80px] w-auto max-w-none object-contain"
               priority
             />
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#74c1f8]">Admin access</p>

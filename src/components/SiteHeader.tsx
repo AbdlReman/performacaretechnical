@@ -42,21 +42,25 @@ export default function SiteHeader() {
       >
         <div className="w-[min(1180px,92%)] mx-auto">
           <nav className="flex items-center justify-between gap-3 py-3 sm:py-3.5 min-h-[108px]">
-            <Link href={localizeHref("/")} className="flex items-center shrink-0" aria-label={t.brand}>
+            <Link
+              href={localizeHref("/")}
+              className="flex items-center shrink-0 overflow-visible"
+              aria-label={t.brand}
+            >
               <Image
                 src="/images/logo.png"
                 alt={t.brand}
-                width={94}
-                height={94}
-                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] dark:hidden"
+                width={1254}
+                height={1254}
+                className="h-[88px] sm:h-[100px] w-auto max-w-none object-contain object-left dark:hidden"
                 priority
               />
               <Image
                 src="/images/logo-white-01.png"
                 alt={t.brand}
-                width={94}
-                height={94}
-                className="object-contain w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] hidden dark:block"
+                width={2825}
+                height={2705}
+                className="h-[88px] sm:h-[100px] w-auto max-w-none object-contain object-left hidden dark:block"
                 priority
               />
             </Link>

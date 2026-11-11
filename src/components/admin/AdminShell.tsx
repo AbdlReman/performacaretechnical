@@ -29,9 +29,9 @@ export default function AdminShell({ children }: { children: ReactNode }) {
             <Image
               src="/images/logo-white-01.png"
               alt="Performa Care"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
+              width={2825}
+              height={2705}
+              className="h-11 w-auto max-w-none object-contain"
             />
             <div>
               <p className="text-sm font-bold tracking-wide text-white">Performa Care</p>
