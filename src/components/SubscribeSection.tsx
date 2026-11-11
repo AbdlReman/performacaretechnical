@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 export default function SubscribeSection() {
@@ -9,12 +9,20 @@ export default function SubscribeSection() {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const sentTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const arrow = locale === "ar" ? "←" : "→";
+
+  useEffect(() => {
+    return () => {
+      if (sentTimer.current) clearTimeout(sentTimer.current);
+    };
+  }, []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
     setSent(false);
+    if (sentTimer.current) clearTimeout(sentTimer.current);
     setLoading(true);
 
     const form = e.currentTarget;
@@ -39,6 +47,7 @@ export default function SubscribeSection() {
 
       setSent(true);
       form.reset();
+      sentTimer.current = setTimeout(() => setSent(false), 3000);
     } catch {
       setError(s.error);
     } finally {
