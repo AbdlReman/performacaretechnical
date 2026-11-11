@@ -558,11 +558,11 @@ export default function Home() {
         <section
           id="quote"
           className="py-16 sm:py-[90px]"
-          style={{ background: "linear-gradient(135deg, var(--blue), #0f3f63)" }}
+          style={{ background: "linear-gradient(135deg, #0f3f63, #081825)" }}
         >
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-[50px] items-center text-white">
             <div className="reveal">
-              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-sky mb-3">
+              <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-[#74c1f8] mb-3">
                 Get in Touch
               </span>
               <h2 className="text-[clamp(28px,4vw,42px)] font-extrabold tracking-[-0.02em] leading-[1.15] mb-3.5 text-white">
