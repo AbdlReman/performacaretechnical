@@ -96,8 +96,8 @@ export default function HospitalityPage() {
               </p>
             </div>
             <Image
-              src="/images/h8-banner1.jpg"
-              alt="Hospitality staffing for events in Dubai"
+              src="/images/Event-ready.jpg"
+              alt="Event-ready hospitality professionals in Dubai"
               width={900}
               height={700}
               className="reveal w-full h-[300px] sm:h-[400px] object-cover rounded-[18px]"
