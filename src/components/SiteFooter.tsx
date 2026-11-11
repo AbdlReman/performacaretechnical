@@ -13,6 +13,7 @@ export default function SiteFooter() {
     { href: localizeHref("/why-us"), label: t.nav.whyUs },
     { href: localizeHref("/process"), label: t.nav.process },
     { href: localizeHref("/faq"), label: t.nav.faq },
+    { href: localizeHref("/blog"), label: t.nav.blog },
   ];
 
   const serviceLinks = [

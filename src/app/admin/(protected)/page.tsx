@@ -5,21 +5,25 @@ import { useEffect, useState } from "react";
 export default function AdminDashboardPage() {
   const [quoteCount, setQuoteCount] = useState<number | null>(null);
   const [subscriberCount, setSubscriberCount] = useState<number | null>(null);
+  const [blogCount, setBlogCount] = useState<number | null>(null);
 
   useEffect(() => {
     let alive = true;
 
     async function load() {
       try {
-        const [quotesRes, subsRes] = await Promise.all([
+        const [quotesRes, subsRes, blogsRes] = await Promise.all([
           fetch("/api/admin/quotes", { cache: "no-store" }),
           fetch("/api/admin/subscribers", { cache: "no-store" }),
+          fetch("/api/admin/blogs", { cache: "no-store" }),
         ]);
         const quotesData = (await quotesRes.json().catch(() => ({}))) as { quotes?: unknown[] };
         const subsData = (await subsRes.json().catch(() => ({}))) as { subscribers?: unknown[] };
+        const blogsData = (await blogsRes.json().catch(() => ({}))) as { blogs?: unknown[] };
         if (!alive) return;
         if (quotesRes.ok) setQuoteCount(quotesData.quotes?.length ?? 0);
         if (subsRes.ok) setSubscriberCount(subsData.subscribers?.length ?? 0);
+        if (blogsRes.ok) setBlogCount(blogsData.blogs?.length ?? 0);
       } catch {
         // keep nulls
       }
@@ -33,6 +37,11 @@ export default function AdminDashboardPage() {
 
   const stats = [
     {
+      label: "Blogs",
+      value: blogCount === null ? "…" : String(blogCount),
+      note: "Draft + published posts",
+    },
+    {
       label: "Quotes",
       value: quoteCount === null ? "…" : String(quoteCount),
       note: "From website quote form",
@@ -43,10 +52,10 @@ export default function AdminDashboardPage() {
       note: "From homepage subscribe form",
     },
     { label: "Admin language", value: "EN", note: "Admin panel is English only" },
-    { label: "Site languages", value: "2", note: "English + Arabic (public site)" },
   ];
 
   const quickLinks = [
+    { href: "/admin/blogs", title: "Blogs", desc: "Create and publish posts with TinyMCE + SEO." },
     { href: "/admin/quotes", title: "Quote requests", desc: "Review incoming cleaning and staffing leads." },
     { href: "/admin/subscribers", title: "Subscribers", desc: "View newsletter and contact subscribers." },
   ];
@@ -56,7 +65,7 @@ export default function AdminDashboardPage() {
       <div>
         <h2 className="text-2xl font-extrabold tracking-[-0.02em] text-white sm:text-3xl">Dashboard</h2>
         <p className="mt-2 max-w-2xl text-[#9bb0c3]">
-          Live admin overview connected to MongoDB for quotes and subscribers.
+          Live admin overview connected to MongoDB for blogs, quotes and subscribers.
         </p>
       </div>
 
@@ -72,7 +81,7 @@ export default function AdminDashboardPage() {
 
       <section className="rounded-[22px] border border-[#2a3b4f] bg-[#152536] p-6 sm:p-8">
         <h3 className="text-xl font-extrabold tracking-[-0.02em] text-white">Quick links</h3>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
           {quickLinks.map((item) => (
             <a
               key={item.href}

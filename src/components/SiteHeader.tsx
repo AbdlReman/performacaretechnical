@@ -17,6 +17,7 @@ export default function SiteHeader() {
     { href: localizeHref("/why-us"), label: t.nav.whyUs },
     { href: localizeHref("/process"), label: t.nav.process },
     { href: localizeHref("/faq"), label: t.nav.faq },
+    { href: localizeHref("/blog"), label: t.nav.blog },
   ];
 
   return (

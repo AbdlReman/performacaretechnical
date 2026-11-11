@@ -11,6 +11,7 @@ export const en = {
     whyUs: "Why Us",
     process: "Process",
     faq: "FAQ",
+    blog: "Blog",
     quote: "Get a Quote",
   },
   common: {
@@ -219,6 +220,16 @@ export const en = {
       "Special services",
     ],
     properties: ["Office", "Villa / Home", "Retail / Mall", "Hotel / Restaurant", "Other"],
+  },
+  blogPage: {
+    eyebrow: "Insights",
+    title: "Performa Care Blog",
+    lead: "Cleaning, staffing and hospitality tips for homes and businesses across Dubai.",
+    loading: "Loading posts...",
+    empty: "No published posts yet. Check back soon.",
+    readMore: "Read more",
+    back: "Back to blog",
+    notFound: "This post was not found or is not published.",
   },
   subscribe: {
     eyebrow: "Stay updated",
