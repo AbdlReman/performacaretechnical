@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendQuoteEmails } from "@/lib/mail";
 import { getDb } from "@/lib/mongodb";
 
 export async function POST(request: NextRequest) {
@@ -12,8 +13,8 @@ export async function POST(request: NextRequest) {
     const message = typeof body.message === "string" ? body.message.trim() : "";
     const locale = body.locale === "ar" ? "ar" : "en";
 
-    if (!name || !phone) {
-      return NextResponse.json({ error: "Name and phone are required." }, { status: 400 });
+    if (!name || !phone || !email) {
+      return NextResponse.json({ error: "Name, phone and email are required." }, { status: 400 });
     }
 
     const db = await getDb();
@@ -31,6 +32,13 @@ export async function POST(request: NextRequest) {
     };
 
     const result = await db.collection("quotes").insertOne(doc);
+
+    // Save first; email failure should not block the quote.
+    try {
+      await sendQuoteEmails({ name, phone, email, service, property, message, locale });
+    } catch (mailError) {
+      console.error("Quote email failed:", mailError);
+    }
 
     return NextResponse.json({ ok: true, id: result.insertedId.toString() });
   } catch (error) {

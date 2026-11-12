@@ -101,6 +101,7 @@ export default function QuoteForm() {
         id="e1"
         name="email"
         type="email"
+        required
         placeholder={t.form.emailPh}
         className="w-full px-3.5 py-3 border border-line rounded-[10px] text-[15px] bg-surface mb-3.5 focus:outline-2 focus:outline-sky focus:bg-card"
       />
