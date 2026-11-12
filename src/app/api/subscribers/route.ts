@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendSubscribeWelcomeEmail } from "@/lib/mail";
 import { getDb } from "@/lib/mongodb";
 
 export async function POST(request: NextRequest) {
@@ -14,6 +15,7 @@ export async function POST(request: NextRequest) {
 
     const db = await getDb();
     const existing = await db.collection("subscribers").findOne({ email });
+    const isNew = !existing;
 
     if (existing) {
       await db.collection("subscribers").updateOne(
@@ -28,20 +30,28 @@ export async function POST(request: NextRequest) {
           },
         },
       );
-      return NextResponse.json({ ok: true, existing: true });
+    } else {
+      await db.collection("subscribers").insertOne({
+        name,
+        email,
+        source: "Home page",
+        status: "Active",
+        locale,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
     }
 
-    await db.collection("subscribers").insertOne({
-      name,
-      email,
-      source: "Home page",
-      status: "Active",
-      locale,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    });
+    // Welcome email for new subscribers (designed template).
+    if (isNew) {
+      try {
+        await sendSubscribeWelcomeEmail(email);
+      } catch (mailError) {
+        console.error("Subscribe welcome email failed:", mailError);
+      }
+    }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, existing: !isNew });
   } catch (error) {
     console.error("Subscriber create failed:", error);
     return NextResponse.json({ error: "Unable to save subscriber." }, { status: 500 });
