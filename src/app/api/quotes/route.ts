@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
       message,
       locale,
       status: "New",
+      read: false,
       createdAt: new Date(),
     };
 

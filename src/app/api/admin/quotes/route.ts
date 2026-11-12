@@ -26,6 +26,7 @@ export async function GET() {
         message: q.message || "",
         locale: q.locale || "en",
         status: q.status || "New",
+        read: Boolean(q.read),
         createdAt: q.createdAt ? new Date(q.createdAt).toISOString() : null,
       })),
     });
