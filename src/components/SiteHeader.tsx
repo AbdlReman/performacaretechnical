@@ -18,7 +18,7 @@ export default function SiteHeader() {
     { href: localizeHref("/hospitality"), label: t.nav.hospitality },
     { href: localizeHref("/why-us"), label: t.nav.whyUs },
     { href: localizeHref("/process"), label: t.nav.process },
-    { href: localizeHref("/faq"), label: t.nav.faq },
+    { href: localizeHref("/contact"), label: t.nav.contact },
     { href: localizeHref("/blog"), label: t.nav.blog },
   ];
 

@@ -11,6 +11,7 @@ export const en = {
     whyUs: "Why Us",
     process: "Process",
     faq: "FAQ",
+    contact: "Contact",
     blog: "Blog",
     quote: "Get a Quote",
   },
@@ -603,6 +604,19 @@ export const en = {
       "Event venues",
     ],
     contactTitle: "Contact",
+    address:
+      "Office 476, 4th Floor, Arjumand Building, 17th St, Green Community Village, Dubai",
+  },
+  contactPage: {
+    eyebrow: "Contact",
+    titleBefore: "Get in",
+    titleHighlight: "Touch",
+    lead:
+      "Call, email, or send the quote form. We serve residential, commercial, and hospitality sites across Dubai.",
+    detailsTitle: "Contact details",
+    formEyebrow: "Request a Quote",
+    formTitle: "Tell us what you need",
+    formLead: "Share your property type, service required, or staff you need — we will get back to you quickly.",
     address:
       "Office 476, 4th Floor, Arjumand Building, 17th St, Green Community Village, Dubai",
   },
