@@ -182,27 +182,78 @@ function buildQuoteThanksHtml(payload: QuoteMailPayload) {
   const body = isAr
     ? "شكراً لتواصلك مع بيرفورما كير. لقد استلمنا رسالتك وطلبك، وسيتواصل معك فريقنا قريباً."
     : "Thanks for contacting Performa Care. We have received your message and request, and our team will get back to you soon.";
-  const regards = isAr ? "مع تحيات<br/>بيرفورما كير" : "Best regards,<br/>Performa Care";
+  const note = isAr
+    ? "عادةً نرد خلال ساعات قليلة في أيام العمل."
+    : "We typically reply within a few hours during business days.";
+  const regards = isAr ? "مع تحيات" : "Best regards,";
+  const brand = isAr ? "بيرفورما كير" : "Performa Care";
+  const contactTitle = isAr ? "تواصل معنا" : "Need help sooner?";
+  const cta = isAr ? "زيارة موقعنا" : "Visit Our Website";
+  const footerNote = isAr
+    ? "تصلك هذه الرسالة لأنك أرسلت طلباً عبر موقعنا."
+    : "You are receiving this because you sent a request on our website.";
 
   return `<!DOCTYPE html>
 <html lang="${isAr ? "ar" : "en"}" dir="${isAr ? "rtl" : "ltr"}">
-<head><meta charset="UTF-8" /><title>${title}</title></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${title}</title>
+</head>
 <body style="margin:0;padding:0;background:#e8eef4;font-family:Arial,Helvetica,sans-serif;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#e8eef4;padding:24px 12px;">
-    <tr><td align="center">
-      <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #d7e2ec;">
-        <tr><td style="background:#0d2236;padding:18px 28px;">
-          <img src="${logoUrl}" alt="Performa Care" width="64" style="display:block;border:0;width:64px;height:auto;" />
-        </td></tr>
-        <tr><td style="padding:32px;">
-          <h1 style="margin:0 0 12px;font-size:24px;color:#0d2236;">${title}</h1>
-          <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#33495e;">${greeting}</p>
-          <p style="margin:0 0 18px;font-size:15px;line-height:1.6;color:#33495e;">${body}</p>
-          <p style="margin:0 0 18px;font-size:15px;line-height:1.6;color:#33495e;">${regards}</p>
-          <p style="margin:0;font-size:13px;color:#5b6b7b;">+971 50 224 7589 · info@performacaretechnical.ae</p>
-        </td></tr>
-      </table>
-    </td></tr>
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #d7e2ec;">
+          <tr>
+            <td align="center" style="background:#0d2236;padding:22px 28px;text-align:center;">
+              <img src="${logoUrl}" alt="Performa Care" width="72" height="72" style="display:block;margin:0 auto;border:0;outline:none;width:72px;height:auto;" />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:36px 32px 8px;text-align:center;">
+              <h1 style="margin:0;font-size:26px;line-height:1.25;color:#0d2236;font-weight:800;">${title}</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:8px 32px 8px;">
+              <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#33495e;">${greeting}</p>
+              <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#33495e;">${body}</p>
+              <p style="margin:0 0 22px;font-size:14px;line-height:1.6;color:#5b6b7b;">${note}</p>
+              <p style="margin:0;font-size:15px;line-height:1.65;color:#33495e;">${regards}<br/><strong style="color:#0d2236;">${brand}</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:24px 32px 8px;">
+              <a href="${base}" style="display:inline-block;background:#0d2236;color:#ffffff;text-decoration:none;font-size:15px;font-weight:700;padding:14px 28px;border-radius:999px;">${cta}</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 32px 28px;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f0f6fb;border-radius:12px;">
+                <tr>
+                  <td style="padding:20px 18px;">
+                    <p style="margin:0 0 10px;font-size:16px;font-weight:800;color:#0d2236;">${contactTitle}</p>
+                    <p style="margin:0 0 6px;font-size:14px;">
+                      <a href="tel:+971502247589" style="color:#1a6397;text-decoration:none;font-weight:700;">+971 50 224 7589</a>
+                    </p>
+                    <p style="margin:0;font-size:14px;">
+                      <a href="mailto:support@performacaretechnical.ae" style="color:#1a6397;text-decoration:none;font-weight:700;">support@performacaretechnical.ae</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background:#0d2236;padding:22px 28px;text-align:center;">
+              <p style="margin:0 0 8px;font-size:12px;line-height:1.5;color:#ffffff;">© 2026 Performa Care Technical Services &amp; Hospitality Services. Dubai, UAE.</p>
+              <p style="margin:0;font-size:11px;line-height:1.5;color:#9bb0c3;">${footerNote}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
   </table>
 </body>
 </html>`;
@@ -246,8 +297,8 @@ export async function sendQuoteEmails(payload: QuoteMailPayload) {
             : "Thanks for messaging Performa Care",
           html: buildQuoteThanksHtml({ ...payload, email: userEmail }),
           text: isAr
-            ? `مرحباً ${payload.name},\n\nشكراً لتواصلك معنا. لقد استلمنا رسالتك وسنرد عليك قريباً.\n\nبيرفورما كير\n+971 50 224 7589`
-            : `Hi ${payload.name},\n\nThanks for messaging us. We have received your request and will respond to you soon.\n\nPerforma Care\n+971 50 224 7589`,
+            ? `مرحباً ${payload.name},\n\nشكراً لتواصلك معنا. لقد استلمنا رسالتك وسنرد عليك قريباً.\n\nبيرفورما كير\n+971 50 224 7589\nsupport@performacaretechnical.ae`
+            : `Hi ${payload.name},\n\nThanks for messaging us. We have received your request and will respond to you soon.\n\nPerforma Care\n+971 50 224 7589\nsupport@performacaretechnical.ae`,
         })
         .then((info) => {
           console.log("Quote thank-you email sent:", info.messageId, "to", userEmail, info.response);
