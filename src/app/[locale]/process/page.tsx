@@ -36,7 +36,7 @@ export default function ProcessPage() {
               {p.steps.map((step, i) => (
                 <div
                   key={stepNums[i]}
-                  className="reveal relative text-left md:text-center grid grid-cols-[56px_1fr] md:block gap-x-[18px]"
+                  className="reveal relative text-start md:text-center grid grid-cols-[56px_1fr] md:block gap-x-[18px]"
                 >
                   <div className="w-14 h-14 rounded-full bg-white border-2 border-blue text-blue font-extrabold grid place-items-center text-lg relative row-span-2 md:mx-auto md:mb-[18px] shadow-[0_10px_30px_-12px_rgba(26,99,151,.45)]">
                     {stepNums[i]}

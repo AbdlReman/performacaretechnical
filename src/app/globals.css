@@ -135,6 +135,11 @@ html[dir="rtl"] body {
       transparent 8px 16px
     );
   }
+
+  html[dir="rtl"] .steps-line::before {
+    left: auto;
+    right: 27px;
+  }
 }
 
 details summary::-webkit-details-marker {

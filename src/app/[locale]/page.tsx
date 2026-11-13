@@ -355,7 +355,7 @@ export default function Home() {
               {h.processSteps.map((step, i) => (
                 <div
                   key={processNums[i]}
-                  className="reveal relative text-left md:text-center grid grid-cols-[56px_1fr] md:block gap-x-[18px] px-0 md:px-2.5"
+                  className="reveal relative text-start md:text-center grid grid-cols-[56px_1fr] md:block gap-x-[18px] px-0 md:px-2.5"
                 >
                   <div className="w-14 h-14 rounded-full bg-white border-2 border-blue text-blue font-extrabold grid place-items-center text-lg relative row-span-2 md:mx-auto md:mb-[18px]">
                     {processNums[i]}
