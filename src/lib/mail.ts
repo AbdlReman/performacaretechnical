@@ -70,8 +70,8 @@ function buildSubscribeWelcomeHtml(locale: string) {
       <td align="center">
         <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #d7e2ec;">
           <tr>
-            <td style="background:#0d2236;padding:18px 28px;">
-              <img src="${logoUrl}" alt="Performa Care" width="64" height="64" style="display:block;border:0;outline:none;width:64px;height:auto;" />
+            <td align="center" style="background:#0d2236;padding:22px 28px;text-align:center;">
+              <img src="${logoUrl}" alt="Performa Care" width="72" height="72" style="display:block;margin:0 auto;border:0;outline:none;width:72px;height:auto;" />
             </td>
           </tr>
           <tr>
