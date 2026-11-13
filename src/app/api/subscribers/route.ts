@@ -42,16 +42,16 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Welcome email for new subscribers (designed template).
-    if (isNew) {
-      try {
-        await sendSubscribeWelcomeEmail(email);
-      } catch (mailError) {
-        console.error("Subscribe welcome email failed:", mailError);
-      }
+    // Always send welcome/thanks email so the subscriber gets a confirmation.
+    let mailSent = false;
+    try {
+      const mailResult = await sendSubscribeWelcomeEmail(email, locale);
+      mailSent = Boolean(mailResult?.sent);
+    } catch (mailError) {
+      console.error("Subscribe welcome email failed:", mailError);
     }
 
-    return NextResponse.json({ ok: true, existing: !isNew });
+    return NextResponse.json({ ok: true, existing: !isNew, mailSent });
   } catch (error) {
     console.error("Subscriber create failed:", error);
     return NextResponse.json({ error: "Unable to save subscriber." }, { status: 500 });

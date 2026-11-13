@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const name = typeof body.name === "string" ? body.name.trim() : "";
     const phone = typeof body.phone === "string" ? body.phone.trim() : "";
-    const email = typeof body.email === "string" ? body.email.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
     const service = typeof body.service === "string" ? body.service.trim() : "";
     const property = typeof body.property === "string" ? body.property.trim() : "";
     const message = typeof body.message === "string" ? body.message.trim() : "";
@@ -34,13 +34,19 @@ export async function POST(request: NextRequest) {
     const result = await db.collection("quotes").insertOne(doc);
 
     // Save first; email failure should not block the quote.
+    let mail = { adminSent: false, userSent: false };
     try {
-      await sendQuoteEmails({ name, phone, email, service, property, message, locale });
+      mail = await sendQuoteEmails({ name, phone, email, service, property, message, locale });
     } catch (mailError) {
       console.error("Quote email failed:", mailError);
     }
 
-    return NextResponse.json({ ok: true, id: result.insertedId.toString() });
+    return NextResponse.json({
+      ok: true,
+      id: result.insertedId.toString(),
+      mailSent: mail.userSent,
+      adminMailSent: mail.adminSent,
+    });
   } catch (error) {
     console.error("Quote create failed:", error);
     return NextResponse.json({ error: "Unable to save quote request." }, { status: 500 });
