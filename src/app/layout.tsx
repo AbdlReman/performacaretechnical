@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_Arabic, Plus_Jakarta_Sans } from "next/font/google";
 import LanguageScript from "@/components/LanguageScript";
 import ThemeScript from "@/components/ThemeScript";
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -17,18 +18,64 @@ const notoArabic = Noto_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Professional Technical & Hospitality Services in Dubai | Performa Care",
+  metadataBase: new URL(SITE_URL),
+  title: "Professional Technical & Hospitality Services in Dubai | Performa Care",
   description:
     "Professional Technical & Hospitality Services in Dubai: cleaning services and manpower supply (cleaners, housekeeping staff, office boys, waiters & waitresses), plus MEP maintenance. Call +971 50 224 7589.",
+  applicationName: SITE_NAME,
+  keywords: [
+    "cleaning services Dubai",
+    "manpower supply Dubai",
+    "hospitality staffing Dubai",
+    "MEP maintenance Dubai",
+    "housekeeping staff",
+    "office cleaning",
+    "Performa Care",
+  ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "business",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: {
-    canonical: "https://performacaretechnical.ae/",
+    canonical: "/",
   },
   openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_AE",
+    url: SITE_URL,
     title: "Professional Technical & Hospitality Services in Dubai | Performa Care",
     description:
       "Reliable technical, cleaning and hospitality solutions for homes and businesses across Dubai.",
-    images: ["/images/shopping-mall-cleaning-660x410.jpg"],
+    images: [{ url: DEFAULT_OG_IMAGE, width: 660, height: 410, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Technical & Hospitality Services in Dubai | Performa Care",
+    description:
+      "Reliable technical, cleaning and hospitality solutions for homes and businesses across Dubai.",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/images/favicon.ico" }],
+    shortcut: "/favicon.ico",
+    apple: "/images/logo.png",
   },
 };
 

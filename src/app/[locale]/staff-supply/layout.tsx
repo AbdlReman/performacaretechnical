@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Manpower & Staff Supply | Cleaners, Housekeeping & Hospitality | Performa Care",
-  description:
-    "Hire trained, uniformed cleaners, housekeeping staff, office boys, waiters and waitresses across Dubai.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildPageMetadata("/staff-supply", locale);
+}
 
 export default function StaffLayout({ children }: { children: React.ReactNode }) {
   return children;

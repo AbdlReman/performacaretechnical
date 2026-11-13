@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Performa Care | Technical, Cleaning & Hospitality Services in Dubai",
-  description:
-    "Performa Care Technical Services and Performa Care Hospitality Services provide cleaning, trained staff supply, hospitality staffing and MEP maintenance across Dubai.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildPageMetadata("/about-us", locale);
+}
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return children;

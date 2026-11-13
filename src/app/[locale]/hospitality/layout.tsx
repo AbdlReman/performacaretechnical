@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Hospitality Services in Dubai | Waiters, Waitresses & Event Staff | Performa Care",
-  description:
-    "Hire trained waiters, waitresses, housekeeping and hospitality staff for hotels, restaurants, cafés, serviced apartments and events across Dubai.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildPageMetadata("/hospitality", locale);
+}
 
 export default function HospitalityLayout({ children }: { children: React.ReactNode }) {
   return children;

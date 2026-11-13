@@ -1,11 +1,45 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { dictionaries } from "@/i18n/dictionaries";
+import { buildPageMetadata, toLocale } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "FAQ | Cleaning, Staff Supply & Maintenance Questions | Performa Care",
-  description:
-    "Answers about staff supply, Dubai coverage, 2-hour response, cleaning contracts, eco-friendly products, events staffing, MEP and how to get a quote.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return buildPageMetadata("/faq", locale);
+}
 
-export default function FaqLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function FaqLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: raw } = await params;
+  const locale = toLocale(raw);
+  const faqs = dictionaries[locale].faqPage.faqs;
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <JsonLd data={faqJsonLd} />
+      {children}
+    </>
+  );
 }
