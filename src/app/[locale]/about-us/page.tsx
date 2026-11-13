@@ -192,7 +192,7 @@ export default function AboutUsPage() {
                   </div>
                 </a>
                 <a
-                  href="mailto:info@performacaretechnical.com"
+                  href="mailto:info@performacaretechnical.ae"
                   className="flex gap-3 items-start hover:opacity-80 transition"
                 >
                   <IconBox>
@@ -210,6 +210,27 @@ export default function AboutUsPage() {
                   <div>
                     <b className="block mb-1">{t.form.email}</b>
                     <span className="text-muted text-[15px]">{t.common.email}</span>
+                  </div>
+                </a>
+                <a
+                  href="mailto:support@performacaretechnical.ae"
+                  className="flex gap-3 items-start hover:opacity-80 transition"
+                >
+                  <IconBox>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="w-6 h-6"
+                    >
+                      <path d="M4 6h16v12H4z" />
+                      <path d="M4 7l8 6 8-6" />
+                    </svg>
+                  </IconBox>
+                  <div>
+                    <b className="block mb-1">{t.common.support}</b>
+                    <span className="text-muted text-[15px]">{t.common.supportEmail}</span>
                   </div>
                 </a>
               </div>

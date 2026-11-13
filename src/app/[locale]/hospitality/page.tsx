@@ -142,7 +142,7 @@ export default function HospitalityPage() {
                 </a>
                 {t.faqPage.helpLeadMid}{" "}
                 <a
-                  href="mailto:info@performacaretechnical.com"
+                  href="mailto:info@performacaretechnical.ae"
                   className="font-bold text-white underline underline-offset-4"
                 >
                   {t.common.email}

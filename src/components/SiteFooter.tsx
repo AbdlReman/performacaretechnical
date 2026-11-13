@@ -87,8 +87,8 @@ export default function SiteFooter() {
                 </a>
               </p>
               <p>
-                <a href="mailto:info@performacaretechnical.com" className="hover:text-white transition break-all">
-                  info@performacaretechnical.com
+                <a href="mailto:info@performacaretechnical.ae" className="hover:text-white transition break-all">
+                  info@performacaretechnical.ae
                 </a>
               </p>
             </div>

@@ -446,7 +446,7 @@ export default function Home() {
                   +971 50 224 7589
                 </a>
                 <a
-                  href="mailto:info@performacaretechnical.com"
+                  href="mailto:info@performacaretechnical.ae"
                   className="flex gap-3 items-center font-semibold"
                 >
                   <span className="shrink-0 w-[46px] h-[46px] rounded-xl bg-white/14 grid place-items-center text-white">

@@ -30,7 +30,7 @@ function fromAddress() {
 }
 
 function siteUrl() {
-  return env("NEXT_PUBLIC_SITE_URL", "https://performacaretechnical.com").replace(/\/$/, "");
+  return env("NEXT_PUBLIC_SITE_URL", "https://performacaretechnical.ae").replace(/\/$/, "");
 }
 
 function buildSubscribeWelcomeHtml() {
@@ -113,7 +113,7 @@ function buildSubscribeWelcomeHtml() {
                       <a href="tel:+971502247589" style="color:#1a6397;text-decoration:none;font-weight:700;">+971 50 224 7589</a>
                     </p>
                     <p style="margin:0 0 6px;font-size:14px;">
-                      <a href="mailto:info@performacaretechnical.com" style="color:#1a6397;text-decoration:none;font-weight:700;">info@performacaretechnical.com</a>
+                      <a href="mailto:info@performacaretechnical.ae" style="color:#1a6397;text-decoration:none;font-weight:700;">info@performacaretechnical.ae</a>
                     </p>
                     <p style="margin:0;font-size:14px;line-height:1.5;color:#5b6b7b;">Office 476, Arjumand Building, Green Community Village, Dubai</p>
                   </td>
@@ -163,7 +163,7 @@ export async function sendSubscribeWelcomeEmail(email: string) {
       "",
       "Get in Touch",
       "+971 50 224 7589",
-      "info@performacaretechnical.com",
+      "info@performacaretechnical.ae",
       "Office 476, Arjumand Building, Green Community Village, Dubai",
       "",
       "© 2026 Performa Care Technical Services & Hospitality Services. Dubai, UAE.",
@@ -237,7 +237,7 @@ export async function sendQuoteEmails(payload: QuoteMailPayload) {
           <p>مرحباً ${escapeHtml(payload.name)},</p>
           <p>شكراً لتواصلك معنا. لقد استلمنا رسالتك وسنرد عليك قريباً.</p>
           <p>مع تحيات<br/>بيرفورما كير</p>
-          <p style="color:#5b6b7b;font-size:13px;">+971 50 224 7589 · info@performacaretechnical.com</p>
+          <p style="color:#5b6b7b;font-size:13px;">+971 50 224 7589 · info@performacaretechnical.ae</p>
         </div>
       `
       : `
@@ -245,7 +245,7 @@ export async function sendQuoteEmails(payload: QuoteMailPayload) {
           <p>Hi ${escapeHtml(payload.name)},</p>
           <p>Thanks for messaging us. We have received your request and will respond to you soon.</p>
           <p>Best regards,<br/>Performa Care</p>
-          <p style="color:#5b6b7b;font-size:13px;">+971 50 224 7589 · info@performacaretechnical.com</p>
+          <p style="color:#5b6b7b;font-size:13px;">+971 50 224 7589 · info@performacaretechnical.ae</p>
         </div>
       `;
 

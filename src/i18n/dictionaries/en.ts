@@ -16,7 +16,9 @@ export const en = {
   },
   common: {
     call: "Call +971 50 224 7589",
-    email: "info@performacaretechnical.com",
+    email: "info@performacaretechnical.ae",
+    supportEmail: "support@performacaretechnical.ae",
+    support: "Support",
     getQuote: "Get a Quote",
     getCleaningQuote: "Get a Cleaning Quote",
     hireStaff: "Hire Staff",
@@ -540,7 +542,7 @@ export const en = {
       },
       {
         q: "How do I get a quote?",
-        a: "Call +971 50 224 7589, email info@performacaretechnical.com, or use the quote form on the website.",
+        a: "Call +971 50 224 7589, email info@performacaretechnical.ae, or use the quote form on the website.",
       },
       {
         q: "What makes Performa Care different?",

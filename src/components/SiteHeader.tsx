@@ -58,8 +58,8 @@ export default function SiteHeader() {
               +971 50 224 7589
             </a>
             {" "}|{" "}
-            <a href="mailto:info@performacaretechnical.com" className="hover:text-white transition">
-              info@performacaretechnical.com
+            <a href="mailto:info@performacaretechnical.ae" className="hover:text-white transition">
+              info@performacaretechnical.ae
             </a>
           </span>
         </div>

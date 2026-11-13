@@ -62,7 +62,7 @@ export default function FaqPage() {
                   +971 50 224 7589
                 </a>
                 {p.helpLeadMid}{" "}
-                <a href="mailto:info@performacaretechnical.com" className="text-blue font-bold">
+                <a href="mailto:info@performacaretechnical.ae" className="text-blue font-bold">
                   {t.common.email}
                 </a>
                 {p.helpLeadAfter}

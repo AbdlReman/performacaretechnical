@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Professional Technical & Hospitality Services in Dubai: cleaning services and manpower supply (cleaners, housekeeping staff, office boys, waiters & waitresses), plus MEP maintenance. Call +971 50 224 7589.",
   alternates: {
-    canonical: "https://performacaretechnical.com/",
+    canonical: "https://performacaretechnical.ae/",
   },
   openGraph: {
     title: "Professional Technical & Hospitality Services in Dubai | Performa Care",

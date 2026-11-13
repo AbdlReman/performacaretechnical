@@ -18,7 +18,9 @@ export const ar: Dictionary = {
   },
   common: {
     call: "اتصل +971 50 224 7589",
-    email: "info@performacaretechnical.com",
+    email: "info@performacaretechnical.ae",
+    supportEmail: "support@performacaretechnical.ae",
+    support: "الدعم",
     getQuote: "اطلب عرض سعر",
     getCleaningQuote: "اطلب عرض تنظيف",
     hireStaff: "وظّف موظفين",
@@ -524,7 +526,7 @@ export const ar: Dictionary = {
       },
       {
         q: "كيف أحصل على عرض سعر؟",
-        a: "اتصل على +971 50 224 7589 أو راسل info@performacaretechnical.com أو استخدم نموذج العرض على الموقع.",
+        a: "اتصل على +971 50 224 7589 أو راسل info@performacaretechnical.ae أو استخدم نموذج العرض على الموقع.",
       },
       {
         q: "ما الذي يميز بيرفورما كير؟",
