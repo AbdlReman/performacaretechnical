@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Arabic, Plus_Jakarta_Sans } from "next/font/google";
+import GoogleTagManager from "@/components/GoogleTagManager";
 import LanguageScript from "@/components/LanguageScript";
 import ThemeScript from "@/components/ThemeScript";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans text-foreground bg-background">
+        <GoogleTagManager />
         <ThemeScript />
         <LanguageScript />
         {children}
