@@ -12,12 +12,12 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 
 const serviceMedia = [
   {
-    img: "/images/shopping-mall-cleaning-660x410.jpg",
-    alt: "Commercial floor cleaning in a modern Dubai mall",
+    img: "/images/marbelcleaning.jpeg",
+    alt: "Performa Care commercial floor polishing in a luxury Dubai interior",
   },
   {
-    img: "/images/update-banner1-1-480x400.jpg",
-    alt: "Professional window cleaning for residential properties",
+    img: "/images/bedsheetset.jpeg",
+    alt: "Performa Care residential room service and bed making",
   },
   {
     img: "/images/manpowerstaffsupply.jpg",
@@ -32,8 +32,8 @@ const serviceMedia = [
     alt: "Technician performing professional maintenance",
   },
   {
-    img: "/images/shopping-mall-cleaning-660x410.jpg",
-    alt: "Specialist floor polishing and surface care",
+    img: "/images/marbelclean.jpeg",
+    alt: "Performa Care marble polishing and specialist surface care",
   },
 ];
 
@@ -304,11 +304,11 @@ export default function Home() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal relative">
               <Image
-                src="/images/h8-banner1.jpg"
-                alt="Performa Care hospitality and cleaning professional"
+                src="/images/hotel-housekeeping-towel-swan-decoration3.jpeg"
+                alt="Performa Care room service and housekeeping professional"
                 width={1000}
                 height={1200}
-                className="rounded-3xl h-[340px] lg:h-[520px] w-full object-cover"
+                className="rounded-3xl h-[340px] lg:h-[520px] w-full object-cover object-[center_20%]"
               />
               <div className="absolute left-4 lg:-left-5 bottom-[30px] bg-blue text-white px-5 py-5 rounded-2xl max-w-[240px] shadow-[0_20px_40px_-15px_rgba(26,99,151,.6)]">
                 <b className="text-[28px] block leading-none">2 hrs</b>

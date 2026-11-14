@@ -3,12 +3,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import CtaButtons from "@/components/CtaButtons";
-import IconBox from "@/components/IconBox";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { useLanguage } from "@/i18n/LanguageProvider";
+
+const specialMedia = [
+  {
+    img: "/images/marbelclean.jpeg",
+    alt: "Marble polishing by Performa Care",
+  },
+  {
+    img: "/images/marbelcleaning.jpeg",
+    alt: "Granite and stone floor polishing",
+  },
+  {
+    img: "/images/sofacleaning.jpeg",
+    alt: "Upholstery and soft furnishings cleaning",
+  },
+  {
+    img: "/images/GLASSCLEANING.jpeg",
+    alt: "Glass and exterior surface cleaning",
+  },
+];
 
 export default function ServicesPage() {
   const { t, locale, localizeHref } = useLanguage();
@@ -61,8 +79,8 @@ export default function ServicesPage() {
           <div className="w-[min(1180px,92%)] mx-auto">
             <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-12">
               <Image
-                src="/images/shopping-mall-cleaning-660x410.jpg"
-                alt="Commercial cleaning services in Dubai"
+                src="/images/sofacleaning.jpeg"
+                alt="Commercial and upholstery cleaning services in Dubai"
                 width={900}
                 height={600}
                 className="w-full h-[280px] sm:h-[380px] object-cover rounded-[18px]"
@@ -114,8 +132,8 @@ export default function ServicesPage() {
               </div>
             </div>
             <Image
-              src="/images/update-banner1-1-480x400.jpg"
-              alt="Residential cleaning for villas and homes"
+              src="/images/bedsheetset.jpeg"
+              alt="Residential room service and housekeeping for villas and homes"
               width={900}
               height={700}
               className="reveal w-full h-[300px] sm:h-[420px] object-cover rounded-[18px]"
@@ -134,24 +152,23 @@ export default function ServicesPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {p.specialItems.map((item) => (
+              {p.specialItems.map((item, i) => (
                 <div
                   key={item}
-                  className="reveal border border-line rounded-[18px] p-6 bg-linear-to-b from-[#f3f9fe] to-white text-center"
+                  className="reveal border border-line rounded-[18px] overflow-hidden bg-linear-to-b from-[#f3f9fe] to-white"
                 >
-                  <IconBox className="mx-auto mb-4">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="w-6 h-6"
-                    >
-                      <path d="M14 7l3-3 3 3-3 3M17 4v0M4 20l9-9" />
-                      <circle cx="6" cy="18" r="2" />
-                    </svg>
-                  </IconBox>
-                  <b className="text-[17px]">{item}</b>
+                  {specialMedia[i] && (
+                    <Image
+                      src={specialMedia[i].img}
+                      alt={specialMedia[i].alt}
+                      width={600}
+                      height={400}
+                      className="h-[160px] w-full object-cover"
+                    />
+                  )}
+                  <div className="p-5 text-center">
+                    <b className="text-[17px]">{item}</b>
+                  </div>
                 </div>
               ))}
             </div>

@@ -69,7 +69,7 @@ export default function HospitalityPage() {
               <p className="text-muted text-[17px]">{p.standardsLead}</p>
             </div>
             <Image
-              src="/images/Event-ready.jpg"
+              src="/images/hotel-housekeeping-towel-swan-decoration2.jpeg"
               alt="Event-ready hospitality professionals in Dubai"
               width={900}
               height={700}

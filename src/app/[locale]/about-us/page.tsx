@@ -83,8 +83,8 @@ export default function AboutUsPage() {
               <p className="text-muted text-[17px]">{p.whoP2}</p>
             </div>
             <Image
-              src="/images/shopping-mall-cleaning-660x410.jpg"
-              alt="Performa Care commercial cleaning services in Dubai"
+              src="/images/hotel-housekeeping-towel-swan-decoration2.jpeg"
+              alt="Performa Care room service and housekeeping in Dubai"
               width={900}
               height={600}
               className="reveal w-full h-[300px] sm:h-[420px] object-cover rounded-[18px]"
