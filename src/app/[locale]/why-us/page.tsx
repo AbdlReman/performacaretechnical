@@ -91,10 +91,10 @@ export default function WhyUsPage() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal relative">
               <Image
-                src="/images/whyus.jpg"
-                alt="Trusted Performa Care partner for clean and well-maintained properties in Dubai"
+                src="/images/Team.jpeg"
+                alt="Trusted Performa Care team for clean and well-maintained properties in Dubai"
                 width={1000}
-                height={1200}
+                height={750}
                 className="rounded-3xl h-[340px] lg:h-[480px] w-full object-cover"
               />
               <div className="absolute left-4 lg:-left-5 bottom-[30px] bg-blue text-white px-5 py-5 rounded-2xl max-w-[240px] shadow-[0_20px_40px_-15px_rgba(26,99,151,.6)]">

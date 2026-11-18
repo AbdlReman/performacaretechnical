@@ -87,7 +87,7 @@ export const en = {
       {
         title: "Special Services",
         desc: "Specialist treatments that restore surfaces and floors.",
-        tags: ["Marble polishing", "Granite polishing", "Carpet shampoo", "Pressure washing"],
+        tags: ["Marble polishing", "Curtains steaming", "High level dusting", "Glass cleaning"],
       },
     ],
     staffEyebrow: "Manpower Supply",
@@ -346,9 +346,9 @@ export const en = {
     specialTitle: "Specialist treatments that restore surfaces and floors",
     specialItems: [
       "Marble polishing",
-      "Granite polishing",
-      "Carpet shampooing",
-      "Pressure washing",
+      "Curtains steaming",
+      "High level dusting",
+      "Glass cleaning",
     ],
     manpowerTitle: "Manpower & Staff Supply",
     manpowerDesc: "Trained people for your site, not just a cleaning service.",

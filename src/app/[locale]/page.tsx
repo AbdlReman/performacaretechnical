@@ -12,12 +12,12 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 
 const serviceMedia = [
   {
-    img: "/images/marbelcleaning.jpeg",
+    img: "/images/marble polish.jpeg",
     alt: "Performa Care commercial floor polishing in a luxury Dubai interior",
   },
   {
-    img: "/images/bedsheetset.jpeg",
-    alt: "Performa Care residential room service and bed making",
+    img: "/images/appartmnt cleaning.jpeg",
+    alt: "Performa Care residential and apartment cleaning",
   },
   {
     img: "/images/manpowerstaffsupply.jpg",
@@ -32,8 +32,8 @@ const serviceMedia = [
     alt: "Technician performing professional maintenance",
   },
   {
-    img: "/images/marbelclean.jpeg",
-    alt: "Performa Care marble polishing and specialist surface care",
+    img: "/images/curtains steaming.jpeg",
+    alt: "Performa Care curtains steaming and specialist surface care",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function Home() {
                     alt={serviceMedia[i].alt}
                     width={800}
                     height={400}
-                    className="h-[200px] w-full object-cover"
+                    className="h-[280px] sm:h-[320px] w-full object-cover"
                   />
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 tracking-[-0.02em]">{s.title}</h3>
@@ -304,11 +304,11 @@ export default function Home() {
           <div className="w-[min(1180px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
             <div className="reveal relative">
               <Image
-                src="/images/hotel-housekeeping-towel-swan-decoration3.jpeg"
-                alt="Performa Care room service and housekeeping professional"
+                src="/images/Team.jpeg"
+                alt="Performa Care professional team in Dubai"
                 width={1000}
-                height={1200}
-                className="rounded-3xl h-[340px] lg:h-[520px] w-full object-cover object-[center_20%]"
+                height={750}
+                className="rounded-3xl h-[340px] lg:h-[520px] w-full object-cover object-center"
               />
               <div className="absolute left-4 lg:-left-5 bottom-[30px] bg-blue text-white px-5 py-5 rounded-2xl max-w-[240px] shadow-[0_20px_40px_-15px_rgba(26,99,151,.6)]">
                 <b className="text-[28px] block leading-none">2 hrs</b>

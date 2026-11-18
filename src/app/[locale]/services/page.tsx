@@ -11,16 +11,16 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 
 const specialMedia = [
   {
-    img: "/images/marbelclean.jpeg",
+    img: "/images/marble polish.jpeg",
     alt: "Marble polishing by Performa Care",
   },
   {
-    img: "/images/marbelcleaning.jpeg",
-    alt: "Granite and stone floor polishing",
+    img: "/images/curtains steaming.jpeg",
+    alt: "Curtains steaming and soft furnishings care",
   },
   {
-    img: "/images/sofacleaning.jpeg",
-    alt: "Upholstery and soft furnishings cleaning",
+    img: "/images/high level dusting.jpeg",
+    alt: "High level dusting service",
   },
   {
     img: "/images/GLASSCLEANING.jpeg",
@@ -79,11 +79,11 @@ export default function ServicesPage() {
           <div className="w-[min(1180px,92%)] mx-auto">
             <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-12">
               <Image
-                src="/images/sofacleaning.jpeg"
-                alt="Commercial and upholstery cleaning services in Dubai"
+                src="/images/high level dusting.jpeg"
+                alt="Commercial cleaning and high level dusting services in Dubai"
                 width={900}
                 height={600}
-                className="w-full h-[280px] sm:h-[380px] object-cover rounded-[18px]"
+                className="w-full h-[360px] sm:h-[460px] object-cover rounded-[18px]"
               />
               <div>
                 <span className="inline-block text-[13px] font-bold tracking-[0.12em] uppercase text-blue mb-3">
@@ -132,11 +132,11 @@ export default function ServicesPage() {
               </div>
             </div>
             <Image
-              src="/images/bedsheetset.jpeg"
-              alt="Residential room service and housekeeping for villas and homes"
+              src="/images/appartmnt cleaning.jpeg"
+              alt="Residential and apartment cleaning for villas and homes"
               width={900}
               height={700}
-              className="reveal w-full h-[300px] sm:h-[420px] object-cover rounded-[18px]"
+              className="reveal w-full h-[380px] sm:h-[500px] object-cover rounded-[18px]"
             />
           </div>
         </section>
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                       alt={specialMedia[i].alt}
                       width={600}
                       height={400}
-                      className="h-[160px] w-full object-cover"
+                      className="h-[240px] w-full object-cover"
                     />
                   )}
                   <div className="p-5 text-center">
@@ -183,7 +183,7 @@ export default function ServicesPage() {
                 alt="Manpower and staff supply"
                 width={600}
                 height={360}
-                className="w-full h-[180px] object-cover rounded-[14px] mb-5"
+                className="w-full h-[260px] object-cover rounded-[14px] mb-5"
               />
               <h2 className="text-2xl font-extrabold tracking-[-0.02em] mb-3">{p.manpowerTitle}</h2>
               <p className="text-muted text-[15px] mb-4">{p.manpowerDesc}</p>
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                 alt="Hospitality staffing for events"
                 width={600}
                 height={360}
-                className="w-full h-[180px] object-cover rounded-[14px] mb-5"
+                className="w-full h-[260px] object-cover rounded-[14px] mb-5"
               />
               <h2 className="text-2xl font-extrabold tracking-[-0.02em] mb-3">{p.hospitalityTitle}</h2>
               <p className="text-muted text-[15px] mb-4">{p.hospitalityDesc}</p>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
                 alt="MEP technical maintenance"
                 width={600}
                 height={360}
-                className="w-full h-[180px] object-cover rounded-[14px] mb-5"
+                className="w-full h-[260px] object-cover rounded-[14px] mb-5"
               />
               <h2 className="text-2xl font-extrabold tracking-[-0.02em] mb-3">{p.mepTitle}</h2>
               <p className="text-muted text-[15px] mb-4">{p.mepDesc}</p>
