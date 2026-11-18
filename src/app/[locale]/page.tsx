@@ -12,8 +12,8 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 
 const serviceMedia = [
   {
-    img: "/images/marble polish.jpeg",
-    alt: "Performa Care commercial floor polishing in a luxury Dubai interior",
+    img: "/images/commercialcleaning.jpg",
+    alt: "Performa Care commercial cleaning services in Dubai",
   },
   {
     img: "/images/appartmnt cleaning.jpeg",

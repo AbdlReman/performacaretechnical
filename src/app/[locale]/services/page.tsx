@@ -79,8 +79,8 @@ export default function ServicesPage() {
           <div className="w-[min(1180px,92%)] mx-auto">
             <div className="reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-12">
               <Image
-                src="/images/high level dusting.jpeg"
-                alt="Commercial cleaning and high level dusting services in Dubai"
+                src="/images/commercialcleaning.jpg"
+                alt="Commercial cleaning services in Dubai"
                 width={900}
                 height={600}
                 className="w-full h-[360px] sm:h-[460px] object-cover rounded-[18px]"
@@ -136,7 +136,7 @@ export default function ServicesPage() {
               alt="Residential and apartment cleaning for villas and homes"
               width={900}
               height={700}
-              className="reveal w-full h-[380px] sm:h-[500px] object-cover rounded-[18px]"
+              className="reveal w-full h-[380px] sm:h-[500px] object-cover object-center rounded-[18px]"
             />
           </div>
         </section>
